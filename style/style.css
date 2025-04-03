@@ -320,9 +320,12 @@
       background-color: #ececff;
       padding: 24px 16px 20px;
       border-radius: 12px;
-      width: 100%;
+      width: fit-content; /* 🔑 solo ocupa lo que necesita */
+      max-width: 90%; /* previene overflow */
+      margin: 0 auto; /* 🔑 centra horizontalmente */
       box-sizing: border-box;
     }
+    
 
     .calendar table {
       width: 100%;
