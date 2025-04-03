@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../style/style.css">
+  <title>Lista de tareas</title>
+  <style>
+    .tareas-container {
+      padding-left: 20px;
+      padding-right: 20px;
+      display: flex;
+      flex-direction: column;
+      height: 84%;
+      box-sizing: border-box;
+      overflow-y: auto;
+    }
+
+
+    .sticky-notes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .note {
+      background-color: #FFF5D8;
+      border-radius: 12px;
+      width: 130px;
+      height: 80px;
+      padding: 10px;
+      box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+      position: relative;
+      font-size: 13px;
+      font-weight: 500;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    .note.completed {
+      color: #999;
+      text-decoration: line-through;
+    }
+
+    .note .circle {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 1.5px solid #333;
+    }
+
+    .note.completed .circle {
+      background-color: #a855f7; /* púrpura */
+      border: none;
+    }
+
+    .estadisticas {
+        margin-top: 55px;
+    }
+
+    .actions {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .actions button {
+      background-color: #8000ff;
+      color: white;
+      font-weight: 600;
+      font-size: 14px;
+      border: none;
+      border-radius: 8px;
+      padding: 12px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="iphone-15">
+    <div class="screen">
+      <div class="dynamic-island"></div>
+
+      <div class="estadisticas">
+        <div class="navigation-bar">
+          <svg class="back-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M12.6567 7.99728C12.6567 8.28383 12.5528 8.57045 12.3456 8.7891L5.8191 15.6663C5.40404 16.104 4.7309 16.104 4.3159 15.6663C3.9009 15.229 3.9009 14.5199 4.3159 14.0824L10.0908 7.99728L4.31608 1.91215C3.90108 1.47462 3.90108 0.765455 4.31608 0.328146C4.73113 -0.109341 5.40427 -0.109341 5.81933 0.328146L12.3458 7.20546C12.5531 7.424 12.6567 7.71062 12.6567 7.99728Z"
+              fill="#343434" />
+          </svg>
+          <div class="page-title">Mi lista de tareas</div>
+        </div>
+      </div>
+
+      <div class="tareas-container">
+        <div class="sticky-notes">
+          <div class="note">
+            Investigar<br>BBDD
+            <div class="circle"></div>
+          </div>
+          <div class="note">
+            Revisión de<br>Examen<br>07/12
+            <div class="circle"></div>
+          </div>
+          <div class="note completed">
+            Estudiar<br>Tema 8 IPO
+            <div class="circle"></div>
+          </div>
+          <div class="note">
+            Tutoría<br>10 AM
+            <div class="circle"></div>
+          </div>
+          <div class="note">
+            Test Tema<br>13 ED
+            <div class="circle"></div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button>Agregar Nueva Anotación</button>
+          <button>Limpiar Notas Terminadas</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

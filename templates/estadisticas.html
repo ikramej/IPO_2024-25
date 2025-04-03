@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../style/style.css">
+  <title>Estadísticas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <style>
+    .screen {
+      width: 100%;
+      height: 100%;
+      background: white;
+      border-radius: 45px;
+      overflow: hidden;
+      position: relative;
+      padding: 0 18px;
+      box-sizing: border-box;
+    }
+
+    .estadisticas {
+        margin-top: 55px;
+    }
+
+    .page-title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+      color: #343434;
+    }
+
+    .section-title {
+      font-size: 15.5px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      color: black;
+      margin: 20px 0 10px;
+      text-align: center;
+    }
+
+    .chart {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+
+    .chart img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="iphone-15">
+    <div class="screen">
+      <div class="dynamic-island"></div>
+
+      <div class="estadisticas">
+      <div class="navigation-bar">
+        <svg class="back-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M12.6567 7.99728C12.6567 8.28383 12.5528 8.57045 12.3456 8.7891L5.8191 15.6663C5.40404 16.104 4.7309 16.104 4.3159 15.6663C3.9009 15.229 3.9009 14.5199 4.3159 14.0824L10.0908 7.99728L4.31608 1.91215C3.90108 1.47462 3.90108 0.765455 4.31608 0.328146C4.73113 -0.109341 5.40427 -0.109341 5.81933 0.328146L12.3458 7.20546C12.5531 7.424 12.6567 7.71062 12.6567 7.99728Z"
+            fill="#343434" />
+        </svg>
+        <div class="page-title">Estadísticas</div>
+      </div>
+    </div>
+
+      <div class="section-title">Tiempo dedicado por asignatura</div>
+      <div class="chart">
+        <img src="../images/imageGrafico1.png" alt="Gráfico circular">
+      </div>
+
+      <div class="section-title">Productividad de las últimas semanas</div>
+      <div class="chart">
+        <img src="../images/grafico2.png" alt="Gráfico de barras">
+      </div>
+    </div>
+  </div>
+</body>
+</html>
