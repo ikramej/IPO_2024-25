@@ -3,140 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Apuntes</title>
+  <title>Inicio</title>
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-  <link rel="stylesheet" href="/style/style.css">
-  <style>
-    /* Estilos específicos solo para apuntes */
-    .search-bar {
-      width: 80%;
-      padding: 10px;
-      border-radius: 10px;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
-      margin-bottom: 15px;
-      font-size: 14px;
-      color: #888;
-    }
-
-    .section-title {
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      font-size: 16px;
-      margin-bottom: 10px;
-    }
-
-    .notes-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    .note-item {
-      background: #f7f7f7;
-      border-radius: 8px;
-      padding: 10px;
-      font-size: 14px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .floating-add-button {
-      position: absolute;
-      bottom: 80px;
-      right: 20px;
-      width: 40px;
-      height: 40px;
-      background-color: #8000ff;
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      font-size: 24px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
-
-    .bottom-menu {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-      padding: 10px 0;
-      background: #fff;
-      border-top: 1px solid #ccc;
-    }
-
-    .bottom-menu .nav-icon {
-      background: none;
-      border: none;
-      color: #666;
-      font-size: 22px;
-      cursor: pointer;
-    }
-
-    .bottom-menu .nav-icon.active {
-      color: #8000ff;
-    }
-  </style>
+  <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
   <div class="iphone-15">
     <div class="screen">
       <div class="dynamic-island"></div>
+
+      <div class="top-bar">
+        <input class="search-bar" placeholder="Búsqueda 🔍" />
+        <div class="top-icons">
+          <div class="icon-menu">☰</div>
+          <div class="icon-settings">⚙️</div>
+        </div>
+      </div>
       
-      <div class="settings-container">
-        <div class="navigation-bar">
-          <svg class="back-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <g transform="scale(-1, 1) translate(-16, 0)">
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M3.34329 7.99728C3.34329 7.71062 3.44716 7.424 3.65445 7.20546L10.1809 0.328146C10.596 -0.109341 11.2691 -0.109341 11.6841 0.328146C12.0991 0.765455 12.0991 1.47462 11.6841 1.91215L5.90919 7.99728L11.6839 14.0824C12.0989 14.5199 12.0989 15.229 11.6839 15.6663C11.2689 16.104 10.5958 16.104 10.1807 15.6663L3.65425 8.7891C3.44692 8.57045 3.34329 8.28383 3.34329 7.99728Z"
-                fill="#343434"/>
-            </g>
-          </svg>
-          <div class="page-title">Apuntes</div>
-        </div>        
-        
-        <div style="display: block;">
-            <div>
-                <input type="text" class="search-bar" placeholder="Búsqueda 🔍">
-            </div>
-            <div class="text-wrapper-6">☰</div>
+      <!-- Sección Estadística -->
+      <div class="section">
+        <div class="section-name star">Estadística</div>
+        <div class="cards-row">
+          <div class="card">📂 Tema 3.1</div>
+          <div class="card">📖 Ejercicios ⭐</div>
         </div>
-        
-        
-        <div class="section">
-          <div class="section-title">Estadística ⭐</div>
-          <div class="notes-grid">
-            <div class="note-item">📂 Tema 3.1</div>
-            <div class="note-item">📖 Ejercicios ⭐</div>
-          </div>
-        </div>
+      </div>
 
-        <div class="section">
-          <div class="section-title">Matemática Discreta y Álgebra</div>
-          <div class="notes-grid">
-            <div class="note-item">📖 Vectores</div>
-            <div class="note-item">📖 Tema 1</div>
-          </div>
+      <!-- Sección Matemática -->
+      <div class="section">
+        <div class="section-name">Matemática Discreta y Álgebra</div>
+        <div class="cards-row">
+          <div class="card">📖 Vectores</div>
+          <div class="card">📖 Tema 1</div>
         </div>
+      </div>
 
-        <div class="floating-add-button">
-          <iconify-icon icon="mdi:plus"></iconify-icon>
+      <div class="floating-buttons">
+        <div class="circle-btn">
+          <img src="../images/image 6.png" alt="Custom Circle Icon" />
         </div>
-
-        <div class="bottom-menu">
-          <button class="nav-icon active"><iconify-icon icon="mdi:earth"></iconify-icon></button>
-          <button class="nav-icon"><iconify-icon icon="mdi:pencil-outline"></iconify-icon></button>
-          <button class="nav-icon"><iconify-icon icon="mdi:bell-outline"></iconify-icon></button>
-          <button class="nav-icon"><iconify-icon icon="mdi:account-outline"></iconify-icon></button>
+        <div class="circle-btn plus-btn">
+          <span>+</span>
         </div>
+      </div>
 
+      <div class="bottom-bar">
+        <iconify-icon icon="mdi:earth"></iconify-icon>
+        <iconify-icon icon="mdi:pencil" class="active"></iconify-icon>
+        <iconify-icon icon="mdi:bell-outline"></iconify-icon>
+        <iconify-icon icon="mdi:account-outline"></iconify-icon>
       </div>
     </div>
   </div>
