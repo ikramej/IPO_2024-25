@@ -3,155 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background-color: #f0f0f0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    }
-    
-    /* iPhone 15 body */
-    .iphone-15 {
-      position: relative;
-      width: 325px;
-      height: 762px;
-      background-color: #111;
-      border-radius: 54px;
-      padding: 10px;
-      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
-    }
-    
-    /* iPhone 15 screen */
-    .screen {
-      width: 100%;
-      height: 100%;
-      background: white;
-      border-radius: 45px;
-      overflow: hidden;
-      position: relative;
-    }
-    
-    /* Dynamic Island */
-    .dynamic-island {
-      position: absolute;
-      width: 126px;
-      height: 34px;
-      background: #111;
-      border-radius: 20px;
-      top: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 10;
-    }
-    
-    /* Settings app container */
-    .settings-container {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      padding-top: 54px;
-      overflow-y: auto;
-      box-sizing: border-box;
-    }
-    
-    /* Navigation Bar */
-    .navigation-bar {
-      display: flex;
-      align-items: center;
-      padding: 10px 20px;
-    }
-    
-    .back-icon {
-      margin-right: 20px;
-      transform: rotate(180deg);
-    }
-    
-    .page-title {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      font-size: 20px;
-      color: #343434;
-    }
-    
-    /* Content Sections */
-    .section {
-      margin: 20px;
-    }
-    
-    .section-title {
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      font-size: 16px;
-      margin-bottom: 15px;
-    }
-    
-    .row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 15px;
-    }
-    
-    .row-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 16px;
-      font-weight: 400;
-    }
-    
-    .select {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: white;
-      border: 1px solid #CCCCCC;
-      border-radius: 8px;
-      padding: 6px 10px;
-      min-width: 90px;
-      font-size: 13.33px;
-      font-family: 'Inter', sans-serif;
-    }
-    
-    .select-wide {
-      min-width: 154px;
-    }
-    
-    .dropdown-icon {
-      width: 11px;
-      height: 11px;
-    }
-    
-    .button {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: white;
-      border: 1px solid #CCCCCC;
-      border-radius: 8px;
-      padding: 6px 10px;
-      min-width: 65px;
-      font-size: 13.33px;
-      font-family: 'Inter', sans-serif;
-    }
-    
-    .delete-button {
-      background: #EA0000;
-      color: white;
-      border-radius: 8px;
-      padding: 8px 0;
-      width: 100%;
-      text-align: center;
-      font-weight: 700;
-      font-size: 13.33px;
-      margin-top: 40px;
-      margin-bottom: 20px;
-      font-family: 'Inter', sans-serif;
-    }
-  </style>
+  <link rel="stylesheet" href="/style/style.css">
 </head>
 <body>
   <div class="iphone-15">
@@ -161,10 +13,12 @@
       <div class="settings-container">
         <div class="navigation-bar">
           <svg class="back-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.34329 7.99728C3.34329 7.71062 3.44716 7.424 3.65445 7.20546L10.1809 0.328146C10.596 -0.109341 11.2691 -0.109341 11.6841 0.328146C12.0991 0.765455 12.0991 1.47462 11.6841 1.91215L5.90919 7.99728L11.6839 14.0824C12.0989 14.5199 12.0989 15.229 11.6839 15.6663C11.2689 16.104 10.5958 16.104 10.1807 15.6663L3.65425 8.7891C3.44692 8.57045 3.34329 8.28383 3.34329 7.99728Z" fill="#343434"/>
+            <g transform="scale(-1, 1) translate(-16, 0)">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M3.34329 7.99728C3.34329 7.71062 3.44716 7.424 3.65445 7.20546L10.1809 0.328146C10.596 -0.109341 11.2691 -0.109341 11.6841 0.328146C12.0991 0.765455 12.0991 1.47462 11.6841 1.91215L5.90919 7.99728L11.6839 14.0824C12.0989 14.5199 12.0989 15.229 11.6839 15.6663C11.2689 16.104 10.5958 16.104 10.1807 15.6663L3.65425 8.7891C3.44692 8.57045 3.34329 8.28383 3.34329 7.99728Z" fill="#343434"/>
+            </g>
           </svg>
           <div class="page-title">Configuración</div>
-        </div>
+        </div>        
         
         <!-- Notifications Section -->
         <div class="section">

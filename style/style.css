@@ -1,0 +1,148 @@
+
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    
+    /* iPhone 15 body */
+    .iphone-15 {
+      position: relative;
+      width: 325px;
+      height: 762px;
+      background-color: #111;
+      border-radius: 54px;
+      padding: 10px;
+      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+    }
+    
+    /* iPhone 15 screen */
+    .screen {
+      width: 100%;
+      height: 100%;
+      background: white;
+      border-radius: 45px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    /* Dynamic Island */
+    .dynamic-island {
+      position: absolute;
+      width: 126px;
+      height: 34px;
+      background: #111;
+      border-radius: 20px;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+    
+    /* Settings app container */
+    .settings-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      padding-top: 54px;
+      overflow-y: auto;
+      box-sizing: border-box;
+    }
+    
+    /* Navigation Bar */
+    .navigation-bar {
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+    }
+    
+    .back-icon {
+      margin-right: 20px;
+      transform: rotate(180deg);
+    }
+    
+    .page-title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+      color: #343434;
+    }
+    
+    /* Content Sections */
+    .section {
+      margin: 20px;
+    }
+    
+    .section-title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+    
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .row-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+    }
+    
+    .select {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+      border: 1px solid #CCCCCC;
+      border-radius: 8px;
+      padding: 6px 10px;
+      min-width: 90px;
+      font-size: 13.33px;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .select-wide {
+      min-width: 154px;
+    }
+    
+    .dropdown-icon {
+      width: 11px;
+      height: 11px;
+    }
+    
+    .button {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+      border: 1px solid #CCCCCC;
+      border-radius: 8px;
+      padding: 6px 10px;
+      min-width: 65px;
+      font-size: 13.33px;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .delete-button {
+      background: #EA0000;
+      color: white;
+      border-radius: 8px;
+      padding: 8px 0;
+      width: 100%;
+      text-align: center;
+      font-weight: 700;
+      font-size: 13.33px;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      font-family: 'Inter', sans-serif;
+    }
