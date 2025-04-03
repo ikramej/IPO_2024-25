@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Circulo</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    
+    /* iPhone 15 body */
+    .iphone-15 {
+      position: relative;
+      width: 325px;
+      height: 762px;
+      background-color: #111;
+      border-radius: 54px;
+      padding: 10px;
+      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+    }
+    
+    /* iPhone 15 screen */
+    .screen {
+      width: 100%;
+      height: 100%;
+      background: white;
+      border-radius: 45px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .dynamic-island {
+      position: absolute;
+      width: 126px;
+      height: 34px;
+      background: #111;
+      border-radius: 20px;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+    
+    .content-container {
+      width: 100%;
+      height: 100%;
+      padding-top: 54px;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+    
+    .navigation-bar {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      position: relative;
+      z-index: 5;
+    }
+    
+    .back-icon {
+      margin-right: 20px;
+      transform: rotate(180deg);
+      margin-top: 15px;
+    }
+    
+    .page-title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+      color: #343434;
+      margin-top: 15px;
+    }
+    
+    .main-content {
+      width: 100%;
+      height: calc(100% - 54px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+    
+    .friends-section {
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    
+    .friends-title {
+      color: #686868;
+      font-size: 20px;
+      font-family: Poppins;
+      font-weight: 600;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    
+    .friends-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      justify-content: center;
+      width: 100%;
+      max-height: 400px;
+      overflow: hidden;
+      padding-top: 5px;
+      padding-bottom: 5px;;
+    }
+    
+    .friend-card {
+      width: 110px;
+      height: 100px;
+      background: white;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 10px;
+      margin: 0 auto;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 
+                  0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .add-friend {
+      background: #F2F1F9;
+    }
+    
+    .friend-avatar {
+      width: 60px;
+      height: 60px;
+      background: #F2F1F9;
+      border-radius: 9999px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden; /* Asegura que la imagen se mantenga redonda */
+    }
+    
+    .friend-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 9999px; /* Redondea la imagen */
+    }
+    
+    .add-icon {
+      width: 24px;
+      height: 24px;
+    }
+    
+    .friend-name {
+      font-size: 14px;
+      font-family: Poppins;
+      font-weight: 500;
+      line-height: 21px;
+      color: #343434;
+      text-align: center;
+    }
+    
+    /* Circle container */
+    .circle-container {
+      width: 125.78px;
+      height: 126px;
+      background: #6200EA;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 9999px;
+      outline: 0.50px #F2F1F9 solid;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px auto;
+    }
+    
+    .circle-icon {
+      width: 87px;
+      height: 95px;
+      border-radius: 9999px; /* Redondea la imagen del círculo central */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="iphone-15">
+    <div class="screen">
+      <div class="dynamic-island"></div>
+      
+      <div class="content-container">
+        <div class="navigation-bar">
+            <a href="apuntes.html">
+            <div class="backIcon">
+          <svg class="back-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
+               xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M12.6567 7.99728C12.6567 8.28383 12.5528 8.57045 12.3456 8.7891L5.8191 15.6663C5.40404 16.104 4.7309 16.104 4.3159 15.6663C3.9009 15.229 3.9009 14.5199 4.3159 14.0824L10.0908 7.99728L4.31608 1.91215C3.90108 1.47462 3.90108 0.765455 4.31608 0.328146C4.73113 -0.109341 5.40427 -0.109341 5.81933 0.328146L12.3458 7.20546C12.5531 7.424 12.6567 7.71062 12.6567 7.99728Z"
+              fill="#343434" />
+          </svg>
+        </div>
+        </a>
+          <div class="page-title">Mi Círculo</div>
+        </div>
+    
+        
+        <div class="main-content">
+          <div class="circle-container">
+            <img class="circle-icon" src="data:image/png;base64,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" />
+          </div>
+          
+          <div class="friends-section">
+            <div class="friends-title">Amigos</div>
+            <div class="friends-grid">
+              <div class="friend-card">
+                <div class="friend-avatar">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8FYaZxZAE1l_lQShMVI2G33j-jYuIQTs0vg&s" alt="Agustín51" />
+                </div>
+                <div class="friend-name">Agustín51</div>
+              </div>
+              <div class="friend-card">
+                <div class="friend-avatar">
+                  <img src="https://www.kitsapdailynews.com/wp-content/uploads/2019/12/19725028_web1_whiteaotwtzr.jpg" alt="Juan_Edu" />
+                </div>
+                <div class="friend-name">Juan_Edu</div>
+              </div>
+              <div class="friend-card">
+                <div class="friend-avatar">
+                  <img src="https://models.bestmodelsagency.com/recursos/clientes/F31110A5-6133-4F2E-96A8-927FA9485371/list.jpg?v1589811317?202410081559" alt="Emma" />
+                </div>
+                <div class="friend-name">Emma</div>
+              </div>
+              <div class="friend-card">
+                <div class="friend-avatar">
+                  <img src="https://manofmany.com/_next/image?url=https%3A%2F%2Fapi.manofmany.com%2Fwp-content%2Fuploads%2F2023%2F06%2F10-Most-Famous-Male-Models-of-All-Time.jpg&w=1200&q=75" alt="Justin" />
+                </div>
+                <div class="friend-name">Justin</div>
+              </div>
+              <div class="friend-card">
+                <div class="friend-avatar">
+                  <img src="https://images.pexels.com/photos/2836486/pexels-photo-2836486.jpeg?cs=srgb&dl=pexels-alipazani-2836486.jpg&fm=jpg" alt="Emer" />
+                </div>
+                <div class="friend-name">Emer</div>
+              </div>
+              <div class="friend-card add-friend">
+                <div class="friend-avatar">
+                  <svg class="add-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22 11H13V2C13 1.4 12.6 1 12 1C11.4 1 11 1.4 11 2V11H2C1.4 11 1 11.4 1 12C1 12.6 1.4 13 2 13H11V22C11 22.6 11.4 23 12 23C12.6 23 13 22.6 13 22V13H22C22.6 13 23 12.6 23 12C23 11.4 22.6 11 22 11Z" fill="#343434" />
+                  </svg>
+                </div>
+                <div class="friend-name">Agregar</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
