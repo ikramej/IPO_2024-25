@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calendario</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      overflow: hidden;
+    }
+
+    .iphone-15 {
+      width: 390px;
+      height: 844px;
+      background-color: #111;
+      border-radius: 60px;
+      padding: 12px;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .screen {
+      width: 100%;
+      height: 100%;
+      background: white;
+      border-radius: 45px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-sizing: border-box;
+      padding: 0 20px;
+    }
+
+    .dynamic-island {
+      position: absolute;
+      width: 120px;
+      height: 34px;
+      background: #000;
+      border-radius: 20px;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+
+    .calendar-content {
+      margin-top: 60px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      box-sizing: border-box;
+    }
+
+    .navigation-bar {
+      display: flex;
+      align-items: center;
+      padding-top: 10px;
+    }
+
+    .back-icon {
+      margin-right: 12px;
+      cursor: pointer;
+    }
+
+    .page-title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+      color: #343434;
+    }
+
+    .calendar {
+      background-color: #ececff;
+      padding: 24px 16px 20px;
+      border-radius: 12px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .calendar table {
+      width: 100%;
+      text-align: center;
+      font-size: 16px;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    .calendar td {
+      padding: 10px;
+      position: relative;
+    }
+
+    .event-bar {
+      position: absolute;
+      bottom: 6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 16px;
+      height: 4px;
+      border-radius: 2px;
+    }
+
+    .legend {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+      font-size: 14px;
+      padding: 0 4px;
+      box-sizing: border-box;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .yellow { background-color: #FFD700; }
+    .green { background-color: #228B22; }
+    .purple { background-color: #800080; }
+    .blue { background-color: #0000FF; }
+    .orange { background-color: #FFA500; }
+
+    .delete-icon {
+      font-size: 14px;
+      color: #999;
+      cursor: pointer;
+    }
+
+    .add-button {
+      background-color: #8000ff;
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 10px;
+      width: 100%;
+      font-weight: bold;
+      font-size: 14px;
+      margin-top: auto;
+      margin-bottom: 25px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="iphone-15">
+    <div class="screen">
+      <div class="dynamic-island"></div>
+
+      <div class="calendar-content">
+        <div class="navigation-bar">
+          <svg class="back-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
+               xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M12.6567 7.99728C12.6567 8.28383 12.5528 8.57045 12.3456 8.7891L5.8191 15.6663C5.40404 16.104 4.7309 16.104 4.3159 15.6663C3.9009 15.229 3.9009 14.5199 4.3159 14.0824L10.0908 7.99728L4.31608 1.91215C3.90108 1.47462 3.90108 0.765455 4.31608 0.328146C4.73113 -0.109341 5.40427 -0.109341 5.81933 0.328146L12.3458 7.20546C12.5531 7.424 12.6567 7.71062 12.6567 7.99728Z"
+              fill="#343434" />
+          </svg>
+          <div class="page-title">Calendario</div>
+        </div>
+
+        <div class="calendar">
+          <table>
+            <tr>
+              <td>1</td><td>2</td><td>3<div class="event-bar orange"></div></td>
+              <td>4</td><td>5</td><td>6</td><td>7</td>
+            </tr>
+            <tr>
+              <td>8</td><td>9</td><td>10</td><td>11</td>
+              <td>12<div class="event-bar green"></div></td><td>13</td><td>14</td>
+            </tr>
+            <tr>
+              <td>15</td><td>16</td><td>17</td><td>18</td>
+              <td>19</td><td>20</td><td>21</td>
+            </tr>
+            <tr>
+              <td>22</td><td>23</td><td>24<div class="event-bar purple"></div></td>
+              <td>25</td><td>26</td><td>27</td><td>28</td>
+            </tr>
+            <tr>
+              <td>29</td><td>30<div class="event-bar blue"></div></td>
+              <td>31<div class="event-bar yellow"></div></td>
+              <td></td><td></td><td></td><td></td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="legend">
+          <div class="legend-item"><div class="dot orange"></div> Presentación <span class="delete-icon">🗑️</span></div>
+          <div class="legend-item"><div class="dot yellow"></div> Examen Ciencias <span class="delete-icon">🗑️</span></div>
+          <div class="legend-item"><div class="dot green"></div> Tutoría de Principios <span class="delete-icon">🗑️</span></div>
+          <div class="legend-item"><div class="dot purple"></div> Práctica de Biología <span class="delete-icon">🗑️</span></div>
+          <div class="legend-item"><div class="dot blue"></div> Ejercicios Prácticos <span class="delete-icon">🗑️</span></div>
+        </div>
+      </div>
+
+      <button class="add-button">Agregar Nuevo Evento</button>
+    </div>
+  </div>
+</body>
+</html>
