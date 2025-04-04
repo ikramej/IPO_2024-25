@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Brainvault Notifications</title>
+  <link rel="stylesheet" href="style.css
+">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f5f5f5;
+    }
+    
+    .iphone-15 {
+      width: 393px;
+      height: 852px;
+      background: #000000;
+      border-radius: 50px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+    }
+    
+    .screen {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .dynamic-island {
+      width: 120px;
+      height: 35px;
+      background: #000;
+      border-radius: 20px;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="iphone-15">
+    <div class="screen">
+      <!-- Dynamic Island -->
+      <div class="dynamic-island"></div>
+      
+      <div data-layer="notificaciones" style="width: 393px; height: 852px; position: relative; background: white; overflow: hidden; padding-top: 40px;">
+        <div data-layer="div.notification" style="width: 360px; height: 66px; left: 17px; top: 166px; position: absolute; background: #ECECFF; border-radius: 10px">
+          <div data-layer="💬" style="left: 15px; top: 21px; position: absolute; color: black; font-size: 24px; font-family: Inter; font-weight: 400; word-wrap: break-word">💬</div>
+          <div data-layer="Sonia.P acaba de enviarte un mensaje." style="width: 202.33px; left: 57.95px; top: 15px; position: absolute; color: black; font-size: 16px; font-family: Inter; font-weight: 400; word-wrap: break-word">Sonia.P acaba de enviarte un mensaje.</div>
+          <div data-layer="div.time" style="width: 84.72px; height: 24px; left: 260.28px; top: 21px; position: absolute; background: #DDDDDD; border-radius: 5px">
+            <div data-layer="Hace 5 horas" style="left: 5px; top: 5px; position: absolute; color: black; font-size: 12px; font-family: Inter; font-weight: 700; word-wrap: break-word">Hace 5 horas</div>
+          </div>
+        </div>
+        <div data-layer="div.notification" style="width: 360px; height: 66px; left: 17px; top: 269px; position: absolute; background: #ECECFF; border-radius: 10px">
+          <div data-layer="⚠️" style="left: 15px; top: 21px; position: absolute; color: black; font-size: 24px; font-family: Inter; font-weight: 400; word-wrap: break-word">⚠️</div>
+          <div data-layer="Se acerca un evento de tu calendario. ¿Empezaste ya?" style="width: 211px; left: 57.95px; top: 15px; position: absolute; color: black; font-size: 16px; font-family: Inter; font-weight: 400; word-wrap: break-word">Se acerca un evento de tu calendario. ¿Empezaste ya?</div>
+          <div data-layer="div.time" style="width: 76.05px; height: 24px; left: 268.95px; top: 21px; position: absolute; background: #DDDDDD; border-radius: 5px">
+            <div data-layer="Hace 2 días" style="left: 5px; top: 5px; position: absolute; color: black; font-size: 12px; font-family: Inter; font-weight: 700; word-wrap: break-word">Hace 2 días</div>
+          </div>
+        </div>
+        <div data-layer="div.notification" style="width: 360px; height: 84px; left: 17px; top: 372px; position: absolute; background: #ECECFF; border-radius: 10px">
+          <div data-layer="🔗" style="left: 15px; top: 30px; position: absolute; color: black; font-size: 24px; font-family: Inter; font-weight: 400; word-wrap: break-word">🔗</div>
+          <div data-layer="Jonas_20 acaba de publicar apuntes de Principios Jurídicos." style="width: 190.31px; left: 57.95px; top: 15px; position: absolute; color: black; font-size: 16px; font-family: Inter; font-weight: 400; word-wrap: break-word">Jonas_20 acaba de publicar apuntes de Principios Jurídicos.</div>
+          <div data-layer="div.time" style="width: 96.73px; height: 24px; left: 248.27px; top: 30px; position: absolute; background: #DDDDDD; border-radius: 5px">
+            <div data-layer="Hace 1 semana" style="left: 5px; top: 5px; position: absolute; color: black; font-size: 12px; font-family: Inter; font-weight: 700; word-wrap: break-word">Hace 1 semana</div>
+          </div>
+        </div>
+        <div data-layer="div.bottom-menu" style="width: 360px; height: 47px; left: 17px; top: 771px; position: absolute; background: white; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.10); border-radius: 20px">
+          <div data-svg-wrapper data-layer="Vector" style="left: 207px; top: 14px; position: absolute">
+          <svg width="23" height="26" viewBox="0 0 23 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14.6648 19.7188V20.5625C14.6648 21.4576 14.3092 22.316 13.6762 22.949C13.0433 23.5819 12.1849 23.9375 11.2898 23.9375C10.3946 23.9375 9.5362 23.5819 8.90326 22.949C8.27033 22.316 7.91475 21.4576 7.91475 20.5625V19.7188M20.3432 18.0012C18.989 16.3437 18.0329 15.5 18.0329 10.9306C18.0329 6.74609 15.8961 5.25529 14.1374 4.53125C13.9038 4.43527 13.6839 4.21484 13.6127 3.9749C13.3042 2.92496 12.4394 2 11.2898 2C10.1401 2 9.27477 2.92549 8.96944 3.97596C8.89825 4.21854 8.67834 4.43527 8.44473 4.53125C6.68393 5.25635 4.54924 6.74188 4.54924 10.9306C4.54661 15.5 3.59053 16.3437 2.23631 18.0012C1.67522 18.6878 2.1667 19.7188 3.14809 19.7188H19.4367C20.4128 19.7188 20.9011 18.6846 20.3432 18.0012Z" stroke="#5F06D3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          </div>
+          <div data-svg-wrapper data-layer="Vector" style="left: 125px; top: 14px; position: absolute">
+          <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.5027 3.34367L16.4212 4.42517L6.48 14.3652C5.80683 15.0395 5.46966 15.3767 5.18033 15.7477C4.83895 16.1857 4.54597 16.6594 4.30649 17.1605C4.10466 17.5852 3.95416 18.0378 3.65316 18.9408L2.37683 22.7687L2.06416 23.7043C1.99103 23.9224 1.98018 24.1566 2.03283 24.3806C2.08548 24.6045 2.19955 24.8093 2.36221 24.972C2.52487 25.1346 2.72968 25.2487 2.95361 25.3013C3.17755 25.354 3.41172 25.3431 3.62983 25.27L4.56549 24.9573L8.39333 23.681C9.29749 23.38 9.74899 23.2295 10.1737 23.0277C10.6769 22.7881 11.1478 22.4968 11.5865 22.1538C11.9575 21.8645 12.2947 21.5273 12.9678 20.8542L22.909 10.913L23.9905 9.83151C24.8508 8.97117 25.3342 7.8043 25.3342 6.58759C25.3342 5.37089 24.8508 4.20401 23.9905 3.34367C23.1302 2.48333 21.9633 2 20.7466 2C19.5299 2 18.363 2.48333 17.5027 3.34367Z" stroke="black" stroke-width="3"/>
+          </svg>
+          </div>
+          <div data-svg-wrapper data-layer="Vector" style="left: 125.38px; top: 16.42px; position: absolute">
+          <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path opacity="0.5" d="M15.4212 0.424011C15.4212 0.424011 15.5565 2.72234 17.5842 4.75001C19.6118 6.77768 21.909 6.91184 21.909 6.91184M3.5655 20.9573L1.37683 18.7687" stroke="black" stroke-width="3"/>
+          </svg>
+          </div>
+          <div data-svg-wrapper data-layer="Vector" style="left: 36px; top: 9px; position: absolute">
+          <svg width="29" height="31" viewBox="0 0 29 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 0C22.5084 0 29 6.90165 29 15.4158C29 22.0446 25.0647 27.696 19.5431 29.8727C19.4498 29.9272 19.351 29.9707 19.2488 30.0022L19.111 30.0361C17.6245 30.5645 16.0673 30.8331 14.5 30.8316C6.49165 30.8316 0 23.9299 0 15.4158C0 6.90165 6.49165 0 14.5 0ZM18.7195 3.92486L18.4643 5.28299C18.2998 6.15709 17.9012 6.96203 17.3165 7.60092C16.7318 8.23981 15.9858 8.68542 15.1685 8.88412L14.587 9.02594C14.2263 9.11337 13.9107 9.34403 13.7048 9.67073C13.4989 9.99743 13.4182 10.3955 13.4792 10.7833L13.733 12.3989C13.8138 12.9168 13.7689 13.448 13.6026 13.9422C13.4363 14.4365 13.1541 14.8774 12.7826 15.2233C12.4111 15.5691 11.9628 15.8083 11.48 15.9184C10.9972 16.0284 10.496 16.0056 10.0239 15.8521L8.15335 15.2447C7.2624 14.9551 6.48243 14.3691 5.92825 13.5729C5.37408 12.7767 5.07498 11.8124 5.075 10.8219V8.22432C3.70207 10.2565 2.94302 12.6846 2.89863 15.1862C2.85424 17.6878 3.5266 20.1446 4.82645 22.2304C6.1263 24.3162 7.99214 25.9324 10.1763 26.8642C12.3604 27.7961 14.7594 27.9996 17.0549 27.4478L16.2125 24.3153C16.1444 24.0635 16.0172 23.8343 15.8427 23.6494L14.0476 21.7393C13.8312 21.5094 13.6629 21.2336 13.5537 20.9299C13.4444 20.6261 13.3966 20.3013 13.4134 19.9766C13.4303 19.6518 13.5113 19.3346 13.6513 19.0454C13.7913 18.7563 13.9871 18.5018 14.226 18.2985L16.4952 16.37C16.9278 16.0021 17.4505 15.7736 18.0015 15.7116C18.5524 15.6496 19.1085 15.7566 19.604 16.0201L21.7355 17.1531C22.3759 17.4937 22.9274 17.997 23.341 18.6184C23.7545 19.2399 24.0174 19.9603 24.1063 20.7157L24.2658 22.0739C25.1923 20.537 25.7866 18.8007 26.0057 16.9902C26.2248 15.1797 26.0632 13.34 25.5327 11.6039C25.0021 9.86775 24.1158 8.27843 22.9376 6.95052C21.7594 5.62262 20.3188 4.58922 18.7195 3.92486ZM18.3063 18.778L16.6707 20.1685L17.8944 21.468C18.3412 21.9436 18.6851 22.517 18.9022 23.1483L19.0008 23.469L19.7882 26.3949C20.2966 26.1174 20.7819 25.8029 21.2439 25.4515L21.6978 25.0877L21.2295 21.098C21.2035 20.8783 21.1334 20.6671 21.0238 20.4787C20.9142 20.2904 20.7677 20.1294 20.5943 20.0066L20.4377 19.911L18.3063 18.778ZM14.5 3.08316C12.1687 3.07899 9.89081 3.8255 7.9663 5.22441C7.9721 5.27991 7.975 5.33695 7.975 5.39553V10.8219C7.97472 11.1521 8.07419 11.4737 8.25874 11.7393C8.4433 12.0049 8.70319 12.2004 9.00015 12.2972L10.8721 12.9046L10.6184 11.289C10.436 10.126 10.6783 8.93289 11.2957 7.95351C11.9132 6.97413 12.8592 6.28246 13.9403 6.01987L14.5218 5.87958C14.7946 5.81329 15.0435 5.66448 15.2385 5.45112C15.4335 5.23776 15.5663 4.96896 15.6209 4.67715L15.9051 3.17257C15.4388 3.11256 14.9696 3.0827 14.5 3.08316Z" fill="black"/>
+          </svg>
+          </div>
+          <div data-svg-wrapper data-layer="mdi:user-outline" style="left: 275px; top: 4px; position: absolute">
+          <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19.5 6.5C21.2239 6.5 22.8772 7.18482 24.0962 8.40381C25.3152 9.62279 26 11.2761 26 13C26 14.7239 25.3152 16.3772 24.0962 17.5962C22.8772 18.8152 21.2239 19.5 19.5 19.5C17.7761 19.5 16.1228 18.8152 14.9038 17.5962C13.6848 16.3772 13 14.7239 13 13C13 11.2761 13.6848 9.62279 14.9038 8.40381C16.1228 7.18482 17.7761 6.5 19.5 6.5ZM19.5 9.75C18.638 9.75 17.8114 10.0924 17.2019 10.7019C16.5924 11.3114 16.25 12.138 16.25 13C16.25 13.862 16.5924 14.6886 17.2019 15.2981C17.8114 15.9076 18.638 16.25 19.5 16.25C20.362 16.25 21.1886 15.9076 21.7981 15.2981C22.4076 14.6886 22.75 13.862 22.75 13C22.75 12.138 22.4076 11.3114 21.7981 10.7019C21.1886 10.0924 20.362 9.75 19.5 9.75ZM19.5 21.125C23.8388 21.125 32.5 23.2862 32.5 27.625V32.5H6.5V27.625C6.5 23.2862 15.1613 21.125 19.5 21.125ZM19.5 24.2125C14.6737 24.2125 9.5875 26.585 9.5875 27.625V29.4125H29.4125V27.625C29.4125 26.585 24.3263 24.2125 19.5 24.2125Z" fill="black"/>
+          </svg>
+          </div>
+        </div>
+        <div data-layer="Navigation Bar / Black" style="width: 375px; height: 53px; left: -8px; top: 61px; position: absolute">
+          <div data-layer="UI Text/Heading/H3/B" style="left: 56px; top: 25px; position: absolute; color: #343434; font-size: 20px; font-family: Poppins; font-weight: 600; line-height: 28px; word-wrap: break-word">Notificaciones</div>
+        </div>
+      </div>
+    </div> <!-- Fin screen -->
+  </div> <!-- Fin iphone-15 -->
+
+</body>
+</html>
