@@ -160,7 +160,10 @@
       <div class="mejorar-plan">
         <div class="container">
           <div class="header">
-            <iconify-icon icon="ic:round-arrow-back" class="icon"></iconify-icon>
+            <div class="back-button" style="cursor: pointer;">
+              <iconify-icon icon="ic:round-arrow-back" class="icon"></iconify-icon>
+            </div>
+            
             <h1>Mejorar Plan</h1>
           </div>
 
@@ -186,4 +189,9 @@
     </div>
   </div>
 </body>
+<script>
+  document.querySelector(".back-button").addEventListener("click", function() {
+    window.history.back();
+  });
+</script>
 </html>
