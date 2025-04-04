@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mejorar Plan</title>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    
+    /* iPhone 15 body - SIN CAMBIOS */
+    .iphone-15 {
+      position: relative;
+      width: 325px;
+      height: 762px;
+      background-color: #111;
+      border-radius: 54px;
+      padding: 10px;
+      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+    }
+    
+    /* Fondo con degradado más morado */
+    .screen {
+      width: 100%;
+      height: 100%;
+      background: rgb(2,0,36);
+      background: linear-gradient(235deg, rgba(2,0,36,1) 0%, rgba(164,0,88,1) 24%, rgba(69,9,121,1) 60%, rgba(164,0,88,1) 100%);
+      border-radius: 45px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .dynamic-island {
+      position: absolute;
+      width: 126px;
+      height: 34px;
+      background: #111;
+      border-radius: 20px;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+
+    /* Contenido */
+    .mejorar-plan .container {
+      padding: 20px;
+      color: white;
+      padding-top: 70px;
+    }
+
+    .mejorar-plan .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .mejorar-plan .header .icon {
+      font-size: 24px;
+      margin-right: 10px;
+      color: white;
+    }
+
+    .mejorar-plan .header h1 {
+      font-size: 24px;
+      font-weight: 600;
+      margin: 0;
+      color: white;
+    }
+
+    .mejorar-plan .precio {
+      background-color: rgba(255, 255, 255, 0.15);
+      padding: 15px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 25px;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mejorar-plan .subtitulo {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      text-align: center;
+      color: white;
+    }
+
+    /* Tarjeta con azul vibrante */
+    .mejorar-plan .tarjeta {
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(69,9,121,1) 48%, rgba(0,212,255,1) 100%);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .mejorar-plan .tarjeta h4 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-top: 0;
+      margin-bottom: 15px;
+      color: white;
+    }
+
+    .mejorar-plan .tarjeta ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .mejorar-plan .tarjeta li {
+      margin-bottom: 10px;
+      font-size: 16px;
+      color: white;
+    }
+
+    .mejorar-plan .boton-subir {
+      width: 100%;
+      background-color: white;
+      color: #1a0340;
+      border: none;
+      padding: 15px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .mejorar-plan .boton-subir:hover {
+      background-color: #f0f0f0;
+      transform: translateY(-2px);
+    }
+
+    .mejorar-plan .descripcion {
+      text-align: center;
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <div class="iphone-15">
+    <div class="screen">
+      <div class="dynamic-island"></div>
+      <div class="mejorar-plan">
+        <div class="container">
+          <div class="header">
+            <iconify-icon icon="ic:round-arrow-back" class="icon"></iconify-icon>
+            <h1>Mejorar Plan</h1>
+          </div>
+
+          <h2 class="precio">Por Solo 3,99 Al Mes Obten Todos Los Beneficios Posibles Con Nuestra IA</h2>
+          <h3 class="subtitulo">Plan Premium</h3>
+
+          <div class="tarjeta">
+            
+
+            <h4>BrainVault</h4>
+            <ul>
+              <li>Escaneo A Texto</li>
+              <li>Hacer Resúmenes Automáticos</li>
+              <li>Y Mucho Más...</li>
+            </ul>
+          </div>
+
+          <button class="boton-subir">Subir de nivel</button>
+
+          <p class="descripcion" style="font-size: 900; font-weight: 600;">Descubre Todos Los Beneficios<br>Que Trae Nuestro Plan Mensual</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
