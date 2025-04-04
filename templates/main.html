@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mockup iPhone 15</title>
+  <link rel="stylesheet" href="/style/style.css">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <!-- Incluye tu CSS aquí -->
+<style>
+    /* Barra de navegación superior */
+    .settings-container1 {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+    }
+
+    .top-bar {
+        margin-top: 10%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+    .search-bar {
+        max-width: 100%;
+        /* Limita su anchura para que no choque con los íconos */
+        height: 33px;
+        border-radius: 10px;
+        border: 1px solid #ddd;
+        padding-left: 10px;
+        font-size: 13.33px;
+        color: #757575;
+        box-sizing: border-box;
+        margin-top: 10%;
+        margin-right: 0px;
+    }
+
+    /* Carrusel principal */
+    /* Contenedor general del carrusel con flechas */
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Si quieres un ancho fijo donde aparezcan flechas a los lados, por ejemplo: */
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 20px; /* Ajusta según requieras */
+  position: relative; /* Para posicionar flechas, si hace falta */
+}
+
+/* Flechas izquierda/derecha (opcional si quieres flechas de scroll manual) */
+.carousel-arrow {
+  font-weight: bold;
+  font-size: 24px;
+  cursor: pointer;
+  color: #7D00FF;
+  user-select: none;
+  padding: 0 10px;
+}
+
+/* Contenedor con scroll horizontal */
+.carousel-container {
+  display: flex;
+  align-items: center;
+  overflow-x: auto; /* Scroll horizontal */
+  scroll-snap-type: x mandatory; 
+  gap: 10px;
+  /* Si usas flechas, puedes reducir un poco el ancho */
+  width: calc(100% - 60px); 
+  /* Ajusta a tu gusto */
+  box-sizing: border-box;
+  padding: 10px 0; 
+  scrollbar-width: none;
+}
+
+/* Cada tarjeta del carrusel */
+.carousel-item {
+  flex: 0 0 auto;  /* Para que no se contraiga */
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  background-color: #B085FF;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column; /* ícono arriba, texto abajo */
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: center; 
+  /* Centra la tarjeta al hacer scroll */
+}
+
+/* Ícono dentro de cada tarjeta (ajusta tamaño y color) */
+.carousel-icon {
+  font-size: 28px;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+/* Texto dentro de la tarjeta */
+.carousel-text {
+  font-size: 14px;
+  color: #fff;
+  margin: 0;
+}
+
+
+    /* Sección de sugerencias */
+    .section-name {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        font-weight: 700;
+        font-size: 16px;
+        color: #7D00FF;
+        padding: 0 16px;
+    }
+
+    .cards-row,
+    .cards-row-2 {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        margin-top: 10px;
+        padding: 0 16px;
+        box-sizing: border-box;
+    }
+
+    .card {
+        background: #ECECFF;
+        width: 100%;
+        max-width: 130px;
+        height: 41px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        color: black;
+    }
+
+    /* Usuarios que podrían interesarte */
+    .users-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        margin-top: 10px;
+        padding: 0 16px;
+        box-sizing: border-box;
+    }
+
+    .user-circle {
+        width: 60px;
+        height: 60px;
+        background-color: #dfdcdc;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        color: #333;
+        flex-direction: column;
+    }
+
+    .user-handle {
+        margin-top: 4px;
+        font-size: 10px;
+    }
+
+    /* Botón FORO */
+    .foro-button {
+        display: block;
+        width: 80px;
+        margin-top: 10%;
+        background: #7D00FF;
+        color: white;
+        text-align: center;
+        padding: 6px 0;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 13.33px;
+        font-family: 'Inter', sans-serif;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+
+</style>
+</head>
+<body>
+
+  <div class="iphone-15">
+    <!-- Dynamic Island -->
+    <div class="dynamic-island" style="margin-top: 10px;"></div>
+
+    <!-- Pantalla principal -->
+    <div class="screen">
+      <div class=".settings-container1">
+        
+        <!-- Top bar: Título + barra de búsqueda -->
+        <div class="top-bar">
+          <h2 style="margin:0;">Mejor Valorados</h2>
+          <input
+            class="search-bar"
+            type="text"
+            placeholder="Empieza Buscando un apunte..."
+          />
+        </div>
+
+        <!-- Carrusel (3 tarjetas de ejemplo) -->
+        <!-- Contenedor del carrusel (flechas opcionales) -->
+<div class="carousel-wrapper">
+    <span class="carousel-arrow left">&lt;</span>
+    
+    <!-- Contenedor que puede hacer scroll horizontal -->
+    <div class="carousel-container">
+      
+      <!-- Item 1 -->
+      <div class="carousel-item">
+        <iconify-icon icon="mdi:database" class="carousel-icon"></iconify-icon>
+        <p class="carousel-text">Bases de datos</p>
+      </div>
+      
+      <!-- Item 2 -->
+      <div class="carousel-item">
+        <iconify-icon icon="mdi:pencil" class="carousel-icon"></iconify-icon>
+        <p class="carousel-text">Resumen de IPO</p>
+      </div>
+  
+      <!-- Item 3 -->
+      <div class="carousel-item">
+        <iconify-icon icon="mdi:server" class="carousel-icon"></iconify-icon>
+        <p class="carousel-text">Tema 3.2 Sistemas</p>
+      </div>
+  
+    </div>
+  
+    <span class="carousel-arrow right">&gt;</span>
+  </div>
+  
+
+        <!-- Podría servirte... -->
+        <h3 class="section-name">Podría servirte...</h3>
+        <div class="cards-row-2">
+          <div class="card">Lógica</div>
+          <div class="card">Álgebra ⭐</div>
+        </div>
+        <div class="cards-row-2">
+          <div class="card">Historia</div>
+          <div class="card">Química</div>
+        </div>
+
+        <!-- Usuarios que podrían interesarte... -->
+        <h3 class="section-name">Usuarios que podrían interesarte...</h3>
+        <div class="users-row">
+          <div class="user-circle">
+            <span>👤</span>
+            <div class="user-handle">@Juan_Edu</div>
+          </div>
+          <div class="user-circle">
+            <span>👤</span>
+            <div class="user-handle">@Maria_Pro</div>
+          </div>
+          <div class="user-circle">
+            <span>👤</span>
+            <div class="user-handle">@Carlos_M</div>
+          </div>
+          <div class="user-circle">
+            <span>👤</span>
+            <div class="user-handle">@Ana_Learn</div>
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: center;">
+            <!-- Botón FORO -->
+        <a href="#" class="foro-button">FORO</a>
+        </div>
+        
+
+      </div>
+
+    <div class="bottom-bar">
+        <iconify-icon icon="mdi:earth" class="active"></iconify-icon>
+        <iconify-icon icon="mdi:pencil"></iconify-icon>
+        <iconify-icon icon="mdi:bell-outline"></iconify-icon>
+        <iconify-icon icon="mdi:account-outline"></iconify-icon>
+    </div>
+    </div>
+  </div>
+
+</body>
+
+<script>
+    const leftArrow = document.querySelector('.carousel-arrow.left');
+    const rightArrow = document.querySelector('.carousel-arrow.right');
+    const carouselContainer = document.querySelector('.carousel-container');
+  
+    // Ajusta esta distancia para controlar cuánto se desplaza el scroll por clic
+    const scrollOffset = 150;
+  
+    leftArrow.addEventListener('click', () => {
+      carouselContainer.scrollBy({
+        left: -scrollOffset,
+        behavior: 'smooth' // Hace que el desplazamiento sea suave
+      });
+    });
+  
+    rightArrow.addEventListener('click', () => {
+      carouselContainer.scrollBy({
+        left: scrollOffset,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+  
+</html>
