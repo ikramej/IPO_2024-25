@@ -490,3 +490,232 @@
       cursor: pointer;
       transition: background-color 0.2s ease;
     }
+
+    .card-modal {
+      position: absolute;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      padding: 8px;
+      z-index: 9999;
+      font-size: 14px;
+    }
+  
+    .card-modal.hidden {
+      display: none;
+    }
+  
+    .card-modal div {
+      padding: 10px 12px;
+      border-bottom: 1px solid #eee;
+      cursor: pointer;
+    }
+  
+    .card-modal div:last-child {
+      border-bottom: none;
+    }
+  
+    .card-modal div:hover {
+      background: #f2f2f2;
+    }
+
+    .delete-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+    }
+    
+    .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      min-width: 260px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .modal-buttons {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 15px;
+    }
+    
+    .btn-cancelar {
+      background-color: #7300ff;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    
+    .btn-eliminar {
+      background-color: red;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    
+    .hidden {
+      display: none;
+    }
+    
+    /* MODAL GENERAL */
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  border-radius: 45px; /* para respetar el borde del .screen */
+}
+
+.modal.hidden {
+  display: none;
+}
+
+/* MODAL INTERIOR CONTENIDO */
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  width: 90%;
+  max-width: 300px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.modal-content h3 {
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.modal-content .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.modal-content select {
+  padding: 4px;
+  font-size: 14px;
+}
+
+/* BOTONES */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  gap: 10px;
+}
+
+.actions .cancel {
+  background: #ccc;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  width: 100%;
+}
+
+.actions .confirm {
+  background: #8000ff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  width: 100%;
+}
+
+.external-btn {
+  margin-top: 12px;
+  background: #8000ff;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+/* MODAL COMPARTIR EXTERNAMENTE */
+.modal-content.externo {
+  text-align: left;
+  padding: 20px;
+}
+
+.modal-content.externo .top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-content.externo .drag-bar {
+  width: 40px;
+  height: 4px;
+  background: #ccc;
+  border-radius: 3px;
+  margin: 8px auto;
+}
+
+.modal-content.externo .close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  position: absolute;
+  right: 20px;
+  top: 12px;
+  cursor: pointer;
+}
+
+.avatars {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0 10px;
+}
+
+.avatars img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.apps {
+  display: flex;
+  gap: 12px;
+  margin: 10px 0;
+  font-size: 13px;
+  flex-wrap: wrap;
+}
+
+input[type="text"] {
+  width: 100%;
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.edit {
+  display: block;
+  margin-top: 8px;
+  color: #007bff;
+  font-size: 13px;
+  text-align: center;
+}
