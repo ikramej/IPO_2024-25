@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Nuevo Debate en iPhone</title>
+    <link rel="stylesheet" href="/style/style.css">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <style>
+        /* Estilos del frame de iPhone */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        .iphone-15 {
+            position: relative;
+            width: 325px;
+            height: 762px;
+            background-color: #111;
+            border-radius: 54px;
+            padding: 10px;
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+        }
+        .screen {
+            width: 100%;
+            height: 100%;
+            background: white;
+            border-radius: 45px;
+            overflow: hidden;
+            position: relative;
+        }
+        .dynamic-island {
+            position: absolute;
+            width: 126px;
+            height: 34px;
+            background: #111;
+            border-radius: 20px;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+        .bottom-bar {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            height: 50px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+            border: 2px solid #ccc;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+        .bottom-bar iconify-icon {
+            font-size: 22px;
+            color: black;
+        }
+        .bottom-bar iconify-icon.active {
+            color: #7D00FF;
+        }
+        /* Estilos específicos para el contenido de nuevo debate */
+        .debate-container {
+            position: relative;
+            width: 100%;
+            height: calc(100% - 70px);
+            overflow-y: auto;
+            padding-top: 20px;
+            box-sizing: border-box;
+        }
+        
+        /* Estilos adaptados de tu HTML */
+        .navigation-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: white;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+            z-index: 10;
+        }
+        
+        .nav-title {
+            color: #343434;
+            font-size: 20px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            margin-left: 20px;
+        }
+        
+        .back-button {
+            cursor: pointer;
+        }
+        
+        .editor-container {
+            width: 100%;
+            height: 85%;
+            margin: 35px auto 0;
+            background: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+        
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #DDDDDD;
+            margin-bottom: 15px;
+        }
+        
+        .format-button {
+            width: 32px;
+            height: 28px;
+            background: white;
+            border-radius: 6px;
+            border: 1px solid #CCCCCC;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+        }
+        
+        .send-button {
+            width: 87px;
+            height: 33px;
+            background: #6200EA;
+            border-radius: 5px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+        }
+        
+        .editor-area {
+            width: 100%;
+            height: 100%;
+            background: #FAFAFA;
+            border-radius: 10px;
+            border: 1px solid #CCCCCC;
+            padding: 15px;
+            box-sizing: border-box;
+            font-size: 13.33px;
+            font-family: 'Inter', sans-serif;
+            color: #757575;
+            resize: none;
+        }
+        
+        .editor-area:focus {
+            outline: none;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="iphone-15">
+        <!-- Dynamic Island -->
+        <div class="dynamic-island" style="margin-top: 10px"></div>
+        <!-- Pantalla principal -->
+        <div class="screen">
+            <!-- Contenedor del debate -->
+            <div class="debate-container" style="margin-top: 55px;">
+                <!-- Barra de navegación -->
+                <div class="navigation-bar">
+                    <a href="../templates/foro.html">
+                        <div class="back-button">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M3.34329 7.99725C3.34329 7.71059 3.44716 7.42397 3.65445 7.20542L10.1809 0.328115C10.596 -0.109372 11.2691 -0.109372 11.6841 0.328115C12.0991 0.765425 12.0991 1.47459 11.6841 1.91212L5.90919 7.99725L11.6839 14.0824C12.0989 14.5199 12.0989 15.229 11.6839 15.6663C11.2689 16.104 10.5958 16.104 10.1807 15.6663L3.65425 8.78907C3.44692 8.57042 3.34329 8.2838 3.34329 7.99725Z"
+                                    fill="#343434" />
+                            </svg>
+                        </div>
+                    </a>
+                    <div class="nav-title">Nuevo Debate</div>
+                </div>
+                
+                <!-- Editor de texto -->
+                <div class="editor-container">
+                    <div class="toolbar">
+                        <div class="format-button">B</div>
+                        <div class="format-button" style="text-decoration: underline;">U</div>
+                        <div class="format-button">Aₙ</div>
+                        <div class="format-button">🖊️</div>
+                        <div class="format-button">
+                            <svg width="33" height="28" viewBox="0 0 33 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.5 6C0.5 2.96243 2.96243 0.5 6 0.5H26.1715C29.2091 0.5 31.6715 2.96243 31.6715 6V22C31.6715 25.0376 29.2091 27.5 26.1715 27.5H6C2.96243 27.5 0.5 25.0376 0.5 22V6Z" fill="white"/>
+                                <path d="M0.5 6C0.5 2.96243 2.96243 0.5 6 0.5H26.1715C29.2091 0.5 31.6715 2.96243 31.6715 6V22C31.6715 25.0376 29.2091 27.5 26.1715 27.5H6C2.96243 27.5 0.5 25.0376 0.5 22V6Z" stroke="#CCCCCC"/>
+                                <path d="M16.5419 20.8125L23.3424 13.1625C23.98 12.4188 23.98 11.25 23.2362 10.5063L20.3672 7.6375C20.0484 7.2125 19.5171 7 18.9858 7H17.0732C16.5419 7 16.0106 7.2125 15.5856 7.6375L8.46626 15.7125C7.82871 16.4563 7.82871 17.7312 8.57252 18.3687L11.4415 21.2375C11.7603 21.6625 12.2916 21.875 12.8229 21.875H24.9363V20.8125H16.5419ZM15.1605 20.7062L12.2916 17.8375C11.8665 17.4125 11.8665 16.8812 12.2916 16.4562L15.9043 12.3125H14.8418L11.654 15.8188C11.0165 16.5625 11.0165 17.625 11.7603 18.3687L14.2042 20.8125H12.8229C12.6103 20.8125 12.3978 20.7063 12.1853 20.6L9.21007 17.625C8.89129 17.3062 8.89129 16.775 9.21007 16.4562L12.9291 12.3125H14.8418L18.5608 8.0625H19.6234L15.9043 12.3125L19.1984 16.2437L15.4793 20.4937C15.3731 20.6 15.2668 20.6 15.1605 20.7062Z" fill="black"/>
+                            </svg>
+                        </div>
+                        <div class="send-button">Enviar</div>
+                    </div>
+                    
+                    <textarea class="editor-area" placeholder="Empieza a escribir tus preguntas..."></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

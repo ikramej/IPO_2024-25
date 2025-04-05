@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Foro en iPhone</title>
@@ -17,6 +18,7 @@
             background-color: #f0f0f0;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
+
         .iphone-15 {
             position: relative;
             width: 325px;
@@ -26,6 +28,7 @@
             padding: 10px;
             box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
         }
+
         .screen {
             width: 100%;
             height: 100%;
@@ -34,6 +37,7 @@
             overflow: hidden;
             position: relative;
         }
+
         .dynamic-island {
             position: absolute;
             width: 126px;
@@ -45,6 +49,7 @@
             transform: translateX(-50%);
             z-index: 10;
         }
+
         .bottom-bar {
             position: absolute;
             bottom: 20px;
@@ -62,13 +67,16 @@
             padding: 0 10px;
             box-sizing: border-box;
         }
+
         .bottom-bar iconify-icon {
             font-size: 22px;
             color: black;
         }
+
         .bottom-bar iconify-icon.active {
             color: #7D00FF;
         }
+
         /* Estilos específicos para el contenido del foro */
         .forum-container {
             position: relative;
@@ -78,7 +86,7 @@
             padding-top: 20px;
             box-sizing: border-box;
         }
-        
+
         /* Estilos adaptados de tu HTML */
         .forum-content {
             width: 100%;
@@ -87,13 +95,13 @@
             background: white;
             overflow-y: auto;
         }
-        
+
         .forum-questions {
             width: 90%;
             margin: 0 auto;
             padding-top: 80px;
         }
-        
+
         .question-card {
             width: 100%;
             background: #F3F3F3;
@@ -102,7 +110,7 @@
             margin-bottom: 20px;
             box-sizing: border-box;
         }
-        
+
         .user-name {
             color: black;
             font-size: 14px;
@@ -110,7 +118,7 @@
             font-weight: 700;
             margin-bottom: 10px;
         }
-        
+
         .question-text {
             color: black;
             font-size: 14px;
@@ -118,11 +126,11 @@
             font-weight: 400;
             margin: 15px 0;
         }
-        
+
         .answers-section {
             margin-top: 20px;
         }
-        
+
         .answers-title {
             color: black;
             font-size: 14px;
@@ -130,20 +138,20 @@
             font-weight: 700;
             margin-bottom: 15px;
         }
-        
+
         .answer {
             position: relative;
             margin-bottom: 15px;
             padding-left: 40px;
         }
-        
+
         .answer-user {
             color: black;
             font-size: 16px;
             font-family: Inter, sans-serif;
             font-weight: 400;
         }
-        
+
         .answer-text {
             color: black;
             font-size: 14px;
@@ -151,7 +159,7 @@
             font-weight: 400;
             margin-top: 5px;
         }
-        
+
         .reply-button {
             position: absolute;
             right: 0;
@@ -166,7 +174,7 @@
             border: none;
             cursor: pointer;
         }
-        
+
         .no-answers {
             color: #808080;
             font-size: 12px;
@@ -174,13 +182,13 @@
             font-weight: 400;
             margin-top: 15px;
         }
-        
+
         .divider {
             height: 1px;
             background: black;
             margin: 10px 0;
         }
-        
+
         .user-avatar {
             position: absolute;
             right: 15px;
@@ -190,7 +198,7 @@
             border-radius: 50%;
             background: #ccc;
         }
-        
+
         .navigation-bar {
             position: absolute;
             top: 0;
@@ -204,7 +212,7 @@
             box-sizing: border-box;
             z-index: 10;
         }
-        
+
         .nav-title {
             color: #343434;
             font-size: 20px;
@@ -212,11 +220,11 @@
             font-weight: 600;
             margin-left: 20px;
         }
-        
+
         .back-button {
             cursor: pointer;
         }
-        
+
         .add-question {
             position: absolute;
             bottom: 80px;
@@ -224,7 +232,7 @@
             transform: translateX(-50%);
             text-align: center;
         }
-        
+
         .add-button {
             width: 50px;
             height: 50px;
@@ -238,7 +246,7 @@
             margin: 0 auto 10px;
             cursor: pointer;
         }
-        
+
         .add-text {
             color: black;
             font-size: 14px;
@@ -247,6 +255,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="iphone-15">
         <!-- Dynamic Island -->
@@ -260,71 +269,81 @@
                 margin-top: 44px;
                 margin-bottom: 0px;
             ">
-                <a href="../templates/main.html">
-                    <div class="back-button">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.34329 7.99725C3.34329 7.71059 3.44716 7.42397 3.65445 7.20542L10.1809 0.328115C10.596-0.109372 11.2691-0.109372 11.6841 0.328115C12.0991 0.765425 12.0991 1.47459 11.6841 1.91212L5.90919 7.99725L11.6839 14.0824C12.0989 14.5199 12.0989 15.229 11.6839 15.6663C11.2689 16.104 10.5958 16.104 10.1807 15.6663L3.65425 8.78907C3.44692 8.57042 3.34329 8.2838 3.34329 7.99725Z" fill="#343434"/>
-                        </svg>
-                        
-                    </div>
-                </a>
+                    <a href="../templates/main.html">
+                        <div class="back-button">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M3.34329 7.99725C3.34329 7.71059 3.44716 7.42397 3.65445 7.20542L10.1809 0.328115C10.596-0.109372 11.2691-0.109372 11.6841 0.328115C12.0991 0.765425 12.0991 1.47459 11.6841 1.91212L5.90919 7.99725L11.6839 14.0824C12.0989 14.5199 12.0989 15.229 11.6839 15.6663C11.2689 16.104 10.5958 16.104 10.1807 15.6663L3.65425 8.78907C3.44692 8.57042 3.34329 8.2838 3.34329 7.99725Z"
+                                    fill="#343434" />
+                            </svg>
+
+                        </div>
+                    </a>
                     <div class="nav-title">FORO</div>
                 </div>
-                
+
                 <!-- Contenido del foro -->
                 <div class="forum-questions">
 
-                <!-- Tarjeta de pregunta 1 -->
-                <div class="question-card">
-                    <div class="user-name">Marta_Eve</div>
-                    <div class="user-avatar" style="margin-top: 94px; margin-right: 11px;">
-                        <img src="../images/ProfilePic.png" alt="Foto de perfil" style="width: 100%; height: 100%; border-radius: 50%;">
+                    <!-- Tarjeta de pregunta 1 -->
+                    <div class="question-card">
+                        <div class="user-name">Marta_Eve</div>
+                        <div class="user-avatar" style="margin-top: 94px; margin-right: 11px;">
+                            <img src="../images/ProfilePic.png" alt="Foto de perfil"
+                                style="width: 100%; height: 100%; border-radius: 50%;">
 
-                    </div>
-                    <div class="question-text">¿Cuál es la diferencia entre propiedad y posesión?</div>
-                    <div class="divider"></div>
-
-                    <div class="answers-section">
-                        <div class="answers-title">RESPONDER</div>
-
-                        <!-- Respuesta 1 -->
-                        <div class="answer">
-                            <div class="user-avatar" style="left: 0; top: 0;">
-                                <img src="../images/ProfilePic.png" alt="Foto de perfil" style="width: 100%; height: 100%; border-radius: 50%;">
-                            </div>
-                            <div class="answer-user">@Jonas_20</div>
-                            <button class="reply-button">Responder</button>
-                            <div class="answer-text">La propiedad es el derecho a disponer de un bien, mientras que...</div>
                         </div>
+                        <div class="question-text">¿Cuál es la diferencia entre propiedad y posesión?</div>
+                        <div class="divider"></div>
 
-                        <!-- Respuesta 2 -->
-                        <div class="answer">
-                            <div class="user-avatar" style="left: 0; top: 0;">
-                                <img src="../images/ProfilePic.png" alt="Foto de perfil" style="width: 100%; height: 100%; border-radius: 50%;">
+                        <div class="answers-section">
+                            <div class="answers-title">RESPONDER</div>
+
+                            <!-- Respuesta 1 -->
+                            <div class="answer">
+                                <div class="user-avatar" style="left: 0; top: 0;">
+                                    <img src="../images/ProfilePic.png" alt="Foto de perfil"
+                                        style="width: 100%; height: 100%; border-radius: 50%;">
+                                </div>
+                                <div class="answer-user">@Jonas_20</div>
+                                <button class="reply-button">Responder</button>
+                                <div class="answer-text">La propiedad es el derecho a disponer de un bien, mientras
+                                    que...</div>
                             </div>
-                            <div class="answer-user">@Anag_</div>
-                            <button class="reply-button">Responder</button>
-                            <div class="answer-text">Depende del contexto....</div>
+
+                            <!-- Respuesta 2 -->
+                            <div class="answer">
+                                <div class="user-avatar" style="left: 0; top: 0;">
+                                    <img src="../images/ProfilePic.png" alt="Foto de perfil"
+                                        style="width: 100%; height: 100%; border-radius: 50%;">
+                                </div>
+                                <div class="answer-user">@Anag_</div>
+                                <button class="reply-button">Responder</button>
+                                <div class="answer-text">Depende del contexto....</div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Tarjeta de pregunta 2 -->
-                <div class="question-card">
-                    <div class="user-name">Sonia_P</div>
-                    <div class="user-avatar" style="margin-top: 412px; margin-right: 11px;">
-                        <img src="../images/ProfilePic.png" alt="Foto de perfil" style="width: 100%; height: 100%; border-radius: 50%;">
+                    <!-- Tarjeta de pregunta 2 -->
+                    <div class="question-card">
+                        <div class="user-name">Sonia_P</div>
+                        <div class="user-avatar" style="margin-top: 412px; margin-right: 11px;">
+                            <img src="../images/ProfilePic.png" alt="Foto de perfil"
+                                style="width: 100%; height: 100%; border-radius: 50%;">
+                        </div>
+                        <div class="question-text">¿Saben si existe algún manual gratuito sobre derecho civil?</div>
+                        <div class="no-answers">No hay respuestas de momento</div>
                     </div>
-                    <div class="question-text">¿Saben si existe algún manual gratuito sobre derecho civil?</div>
-                    <div class="no-answers">No hay respuestas de momento</div>
+
+
                 </div>
 
-                
-                </div>
-                
                 <!-- Botón para añadir pregunta -->
                 <div class="add-question" style="top: 560px;">
-                    <div class="add-button">+</div>
+                    <a href="../templates/nuevoDebate.html">
+                        <div class="add-button">+</div>
+                    </a>
                     <div class="add-text">¡Pregunta sin miedo!</div>
                 </div>
             </div>
@@ -332,4 +351,5 @@
 
     </div>
 </body>
+
 </html>
