@@ -93,8 +93,8 @@
       <div class="section">
         <div class="section-name star">Estadística</div>
         <div class="cards-row">
-          <div class="card">📂 Tema 3.1</div>
-          <div class="card">📖 Ejercicios ⭐</div>
+          <div class="card" onclick="mostrarCardOptions(event)">📂 Tema 3.1</div>
+          <div class="card" onclick="mostrarCardOptions(event)">📖 Ejercicios ⭐</div>
         </div>
       </div>
 
@@ -102,10 +102,111 @@
       <div class="section">
         <div class="section-name">Matemática Discreta y Álgebra</div>
         <div class="cards-row">
-          <div class="card">📖 Vectores</div>
-          <div class="card">📖 Tema 1</div>
+          <div class="card" onclick="mostrarCardOptions(event)">📖 Vectores</div>
+          <div class="card" onclick="mostrarCardOptions(event)">📖 Tema 1</div>
         </div>
       </div>
+
+      <!-- Modal al hacer clic en un apunte -->
+      <div id="cardOptions" class="dropdown-menu" style="display: none; position: absolute;">
+        <div onclick="editarApunte()">✏️ Editar</div>
+        <div onclick="mostrarModalEliminar('Tema 1: Action Potentials')">🗑️ Eliminar</div>
+        <div onclick="mostrarModalCompartir()">📤 Compartir a...</div>
+        <div onclick="exportarApunte()">📁 Exportar a...</div>
+      </div>
+
+      <!-- Modal de Confirmación -->
+      <div id="deleteModal" class="delete-modal hidden">
+        <div class="modal-content">
+          <p><strong>¿Estás seguro de eliminar?</strong></p>
+          <p id="nombreApunte">TEMA 1: ACTION POTENTIALS</p>
+          <div class="modal-buttons">
+            <button onclick="cerrarModalEliminar()" class="btn-cancelar">Cancelar</button>
+            <button onclick="cerrarModalEliminar()" class="btn-eliminar">Eliminar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Compartir -->
+<div id="modalCompartir" class="modal hidden">
+  <div class="modal-content">
+    <h3>Compartir con...</h3>
+    <div class="row">
+      <span>Sonia.P</span>
+      <select>
+        <option>Lectura</option>
+        <option>Escritura</option>
+      </select>
+    </div>
+    <div class="row">
+      <span>añadir amigo</span>
+      <select>
+        <option>Lectura</option>
+        <option>Escritura</option>
+      </select>
+    </div>
+    <div class="actions">
+      <button class="cancel" onclick="cerrarModales()">Cancelar</button>
+      <button class="confirm" onclick="compartirExterno()">Compartir</button>
+    </div>
+    <button class="external-btn" onclick="abrirModalExterno()">Compartir externamente</button>
+  </div>
+</div>
+
+<!-- Modal Compartir Externamente -->
+<div id="modalExterno" class="modal hidden">
+  <div class="modal-content externo">
+    <div class="drag-bar"></div>
+    <div class="top-bar">
+      <h3>Compartir</h3>
+      <button class="close" onclick="cerrarModalExterno()">✖</button>
+    </div>
+    <p style="margin-top: 0; margin-bottom: 10px; font-size: 14px;">Selecciona con quién o cómo compartir</p>
+
+    <!-- Perfiles -->
+    <div class="avatars">
+      <div style="text-align: center;">
+        <img src="https://randomuser.me/api/portraits/women/1.jpg" />
+        <div style="font-size: 12px;">Sonia.P</div>
+      </div>
+      <div style="text-align: center;">
+        <img src="https://randomuser.me/api/portraits/men/2.jpg" />
+        <div style="font-size: 12px;">Kevin L.</div>
+      </div>
+      <div style="text-align: center;">
+        <img src="https://randomuser.me/api/portraits/women/3.jpg" />
+        <div style="font-size: 12px;">Juliana</div>
+      </div>
+      <div style="text-align: center;">
+        <img src="https://randomuser.me/api/portraits/women/4.jpg" />
+        <div style="font-size: 12px;">Ana G.</div>
+      </div>
+    </div>
+
+    <!-- Aplicaciones -->
+    <div class="apps">
+      <div style="text-align: center;">
+        <img src="https://cdn-icons-png.flaticon.com/512/888/888882.png" width="32" />
+        <div>OneDrive</div>
+      </div>
+      <div style="text-align: center;">
+        <img src="https://cdn-icons-png.flaticon.com/512/2702/2702602.png" width="32" />
+        <div>Drive</div>
+      </div>
+      <div style="text-align: center;">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968885.png" width="32" />
+        <div>Notion</div>
+      </div>
+    </div>
+
+    <input type="text" placeholder="Copy link" />
+    <a href="#" class="edit" onclick="cerrarModalExterno()">Edit Actions...</a>
+  </div>
+</div>
+
+
+
+
 
       <div class="floating-buttons">
         <a href="../templates/pantallaMiCirculo.html">
