@@ -15,8 +15,23 @@
       <div class="top-bar">
         <input class="search-bar" placeholder="Búsqueda 🔍" />
         <div class="top-icons">
-          <div class="icon-menu">☰</div>
-          <div class="icon-settings">⚙️</div>
+          <div class="icon-menu" onclick="toggleDropdown()">☰</div>
+          <div class="icon-settings" onclick="toggleSettingsDropdown()">⚙️</div>
+          <!-- Dropdown para vista -->
+          <div id="viewDropdown" class="dropdown-menu">
+            <div class="selected">Carpetas</div>
+            <div>Listas</div>
+        </div>
+
+        </div>
+
+        <!-- Dropdown -->
+        <div id="dropdown" class="dropdown-menu">
+          <div>Nombre</div>
+          <div>Fecha ASC</div>
+          <div>Fecha DESC</div>
+          <div>Visitado</div>
+          <div class="selected">Favoritos</div>
         </div>
       </div>
       
@@ -48,14 +63,130 @@
       </div>
 
       <div class="bottom-bar">
-        <a href="/templates/main.html"><iconify-icon icon="mdi:earth"></iconify-icon></a>
-        <iconify-icon icon="mdi:pencil" class="active"></iconify-icon>
-        <a href="/templates/notificaciones.html"><iconify-icon icon="mdi:bell-outline"></iconify-icon></a>
+        <iconify-icon icon="mingcute:world-2-line" class="active"></iconify-icon>
+        <a href="/templates/apuntes.html"><iconify-icon icon="tabler:pencil"></iconify-icon></a>
+        <a href="../templates/notificaciones.html"><iconify-icon icon="bx:bell"></iconify-icon></a>
         <a href="/templates/pantallaPerfil.html">
-        <iconify-icon icon="mdi:account-outline"></iconify-icon>
+        <iconify-icon icon="mingcute:user-2-line"></iconify-icon>
       </a>
-      </div>
+    </div>
     </div>
   </div>
+  <script>
+    // Asignar valores aleatorios a cada card al cargar
+    const cards = document.querySelectorAll(".card");
+    cards.forEach(card => {
+      card.dataset.fecha = Math.floor(Math.random() * 100);     // Número aleatorio (0–99)
+      card.dataset.visitado = Math.floor(Math.random() * 100);  // Otro valor aleatorio
+    });
+  
+    // Mostrar/ocultar el menú
+    function toggleDropdown() {
+      document.getElementById("dropdown").classList.toggle("active");
+    }
+  
+    // Cierra el dropdown si haces clic fuera
+    window.addEventListener('click', function (e) {
+      const dropdown = document.getElementById('dropdown');
+      if (!e.target.closest('.icon-menu') && !e.target.closest('.dropdown-menu')) {
+        dropdown.classList.remove('active');
+      }
+    });
+  
+    // Lógica del filtro
+    const dropdownItems = document.querySelectorAll("#dropdown div");
+  
+    dropdownItems.forEach(item => {
+      item.addEventListener("click", () => {
+        // Visual
+        dropdownItems.forEach(i => i.classList.remove("selected"));
+        item.classList.add("selected");
+  
+        document.getElementById("dropdown").classList.remove("active");
+        const filter = item.textContent.trim();
+  
+        let sortedCards = Array.from(cards);
+  
+        if (filter === "Favoritos") {
+          // Mostrar solo los que tienen estrella
+          cards.forEach(card => {
+            card.style.display = card.textContent.includes("⭐") ? "block" : "none";
+          });
+          return;
+        }
+  
+        // Ordenar
+        if (filter === "Nombre") {
+          sortedCards.sort((a, b) => a.textContent.localeCompare(b.textContent));
+        } else if (filter === "Fecha ASC") {
+          sortedCards.sort((a, b) => a.dataset.fecha - b.dataset.fecha);
+        } else if (filter === "Fecha DESC") {
+          sortedCards.sort((a, b) => b.dataset.fecha - a.dataset.fecha);
+        } else if (filter === "Visitado") {
+          sortedCards.sort((a, b) => b.dataset.visitado - a.dataset.visitado);
+        }
+  
+        // Reinsertar ordenado
+        const rows = document.querySelectorAll(".cards-row");
+        rows.forEach(row => row.innerHTML = "");
+  
+        let index = 0;
+        for (let row of rows) {
+          for (let i = 0; i < 2 && index < sortedCards.length; i++, index++) {
+            row.appendChild(sortedCards[index]);
+          }
+        }
+      });
+    });
+
+    // Mostrar/ocultar menú de configuración
+    function toggleSettingsDropdown() {
+      document.getElementById("viewDropdown").classList.toggle("active");
+    }
+
+    // Cierra el dropdown si haces clic fuera
+    window.addEventListener('click', function (e) {
+      const settingsDropdown = document.getElementById('viewDropdown');
+      const settingsIcon = document.querySelector('.icon-settings');
+
+      if (!e.target.closest('.icon-settings') && !e.target.closest('#viewDropdown')) {
+        settingsDropdown.classList.remove('active');
+      }
+    });
+
+    // Manejar cambios de vista (Carpetas o Listas)
+    const viewItems = document.querySelectorAll("#viewDropdown div");
+    const sections = document.querySelectorAll(".section");
+
+    viewItems.forEach(item => {
+      item.addEventListener("click", () => {
+        viewItems.forEach(i => i.classList.remove("selected"));
+        item.classList.add("selected");
+        document.getElementById("viewDropdown").classList.remove("active");
+
+        const mode = item.textContent.trim().replace("✔", "");
+
+        sections.forEach(section => {
+          const row = section.querySelector(".cards-row");
+          if (!row) return;
+
+          if (mode === "Listas") {
+            row.style.flexDirection = "column";
+            row.querySelectorAll(".card").forEach(card => {
+              card.classList.add("list-view");
+            });
+          } else {
+            row.style.flexDirection = "row";
+            row.querySelectorAll(".card").forEach(card => {
+              card.classList.remove("list-view");
+            });
+          }
+
+        });
+      });
+    });
+
+  </script>
+  
 </body>
 </html>

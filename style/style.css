@@ -223,7 +223,31 @@
       justify-content: center;
       font-size: 14px;
       color: black;
+      text-align: center;      /* <--- Añade esto */
+      padding: 0 8px;          /* <--- Opcional: para evitar que se pegue a los bordes */
+      white-space: nowrap;     /* <--- Opcional: evita que se divida en dos líneas si no quieres */
+      overflow: hidden;        /* <--- Por si se pasa del ancho */
+      text-overflow: ellipsis; /* <--- Y que se vea con puntos suspensivos si se recorta */
     }
+
+
+    .card.list-view {
+      width: 95%;
+      max-width: 100%;
+    }
+    
+
+    .dropdown-menu div.selected {
+      font-weight: bold;
+      position: relative;
+    }
+    
+    .dropdown-menu div.selected::after {
+      content: " ✔";
+      position: absolute;
+      right: 10px;
+    }
+    
 
     .section-subtitle {
       margin-top: 20px;
@@ -401,4 +425,34 @@
       cursor: pointer;
     }
 
+    .dropdown-menu {
+      position: absolute;
+      top: 52px;
+      right: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      padding: 10px 0;
+      font-size: 14px;
+      width: 160px;
+      display: none;
+      z-index: 999;
+    }
+
+    .dropdown-menu.active {
+      display: block;
+    }
+
+    .dropdown-menu div {
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+
+    .dropdown-menu div:hover {
+      background-color: #f2f2f2;
+    }
+
+    .dropdown-menu .selected {
+      font-weight: bold;
+    }
     
