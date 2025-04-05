@@ -455,6 +455,11 @@
     .dropdown-menu .selected {
       font-weight: bold;
     }
+    .menu-opciones a {
+      text-decoration: none;
+      color: inherit; /* Makes the link inherit the text color of the parent */
+    }
+    
     
     .menu-opciones {
       display: flex;
