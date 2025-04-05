@@ -17,7 +17,7 @@
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
     
-    /* iPhone 15 body - SIN CAMBIOS */
+    /* iPhone 15 body */
     .iphone-15 {
       position: relative;
       width: 325px;
@@ -160,7 +160,11 @@
       <div class="mejorar-plan">
         <div class="container">
           <div class="header">
-            <iconify-icon icon="ic:round-arrow-back" class="icon"></iconify-icon>
+            <a href="pantallaPerfil.html">
+              <div class="back-button" style="cursor: pointer;">
+                <iconify-icon icon="ic:round-arrow-back" class="icon"></iconify-icon>
+              </div>
+          </a>
             <h1>Mejorar Plan</h1>
           </div>
 
@@ -186,4 +190,10 @@
     </div>
   </div>
 </body>
+<script>
+  document.querySelector(".back-button").addEventListener("click", function() {
+    window.history.back();
+  });
+</script>
 </html>
+

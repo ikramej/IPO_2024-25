@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eliminar cuenta</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      font-family: Arial, sans-serif;
+    }
+
+    .modal {
+      background: white;
+      border-radius: 8px;
+      width: 280px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      box-sizing: border-box;
+      margin-left: 10px;
+    }
+
+    h1 {
+      font-size: 1.2rem;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+
+    input[type="password"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .cancel-btn,
+    .delete-btn {
+      padding: 8px 16px;
+      border-radius: 4px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      user-select: none;
+      width: 100%;
+      box-sizing: border-box;
+      border: none;
+    }
+
+    .cancel-btn {
+      background-color: #6200EA;
+      color: white;
+    }
+
+    .delete-btn {
+      background-color: #ff4444;
+      color: white;
+    }
+
+    .cancel-btn:hover {
+      background-color: #4a00b5;
+    }
+
+    .delete-btn:hover {
+      background-color: #e53935;
+    }
+
+    .cancel-btn:active,
+    .delete-btn:active {
+      transform: scale(0.98);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="modal">
+    <h1>Eliminar Tu Cuenta</h1>
+    <p>Escribe tu contraseña para eliminar tu cuenta</p>
+
+    <div class="input-group">
+      <input type="password" placeholder="Contraseña" autocomplete="current-password">
+    </div>
+
+    <div class="button-group">
+      <div class="cancel-btn" onclick="cerrarModal()">Cancelar</div>
+      <div class="delete-btn" onclick="eliminarCuenta()">Eliminar</div>
+    </div>
+  </div>
+
+  <script>
+    function cerrarModal() {
+      if (window.parent && window.parent.ocultarModal) {
+        window.parent.ocultarModal();
+      }
+    }
+
+    function eliminarCuenta() {
+      const password = document.querySelector('input[type="password"]').value;
+      if (!password) {
+        const errorElement = document.createElement('div');
+        errorElement.textContent = 'Por favor ingresa tu contraseña';
+        errorElement.style.color = '#ff4444';
+        errorElement.style.paddingBlockEnd = '5px';
+        errorElement.style.fontSize = '17px';
+        document.querySelector('.modal').appendChild(errorElement);
+        return;
+      }
+
+      if (window.top) {
+        window.top.location.href = "../iniciarSesión.html";
+      } else {
+        window.location.href = "../iniciarSesión.html";
+      }
+    }
+  </script>
+</body>
+
+</html>

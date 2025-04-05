@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <title>Brainvault Login</title>
   <link rel="stylesheet" href="/style/style.css" />
+
 </head>
 <body>
 
@@ -23,18 +24,19 @@
         </div>
 
         <!-- Formularios de usuario y contraseña -->
-        <form style="padding: 20px;">
+        <form id="loginForm" style="padding: 20px;" >
           <div style="margin-bottom: 15px;">
-            <input type="text" placeholder="Nombre de usuario" style="width: 95%;padding: 12px;border: 1px solid #cccccc;border-radius: 8px;
+            <input type="text" id="usuario" placeholder="Nombre de usuario" style="width: 95%;padding: 12px;border: 1px solid #cccccc;border-radius: 8px;
                 font-family: 'Inter', sans-serif;
                 font-size: 14px;
               "/>
           </div>
           <div style="margin-bottom: 5px;">
-            <input type="password" placeholder="Contraseña" style="width: 95%; padding: 12px; border: 1px solid #cccccc; border-radius: 8px;
+            <input type="password" id="contraseña" placeholder="Contraseña" style="width: 95%; padding: 12px; border: 1px solid #cccccc; border-radius: 8px;
                 font-family: 'Inter', sans-serif;
                 font-size: 14px;
               "/>
+              <div id="NombreUsuarioError"></div>  
           </div>
           
           <div style="text-align: left; margin-bottom: 20px;">
@@ -44,6 +46,7 @@
               text-decoration: none;
               color: #6B3DF0;
             ">
+          <div id="contraseñaError"></div>  
               ¿Has olvidado tu contraseña?
             </a>
           </div>
@@ -103,4 +106,6 @@
     </div> <!-- Fin screen -->
   </div> <!-- Fin iphone-15 -->
 </body>
+
+<script src="/js/informacion.js"></script>
 </html>
