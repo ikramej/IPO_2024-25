@@ -58,7 +58,8 @@
         <div onclick="editarApunte()">✏️ Editar</div>
         <div onclick="mostrarModalEliminar('Tema 1: Action Potentials')">🗑️ Eliminar</div>
         <div onclick="mostrarModalCompartir()">📤 Compartir a...</div>
-        <div onclick="exportarApunte()">📁 Exportar a...</div>
+        <div onclick="abrirExportarModal()">📁 Exportar a...</div>
+
       </div>
 
       <!-- Modal de Confirmación -->
@@ -73,84 +74,110 @@
         </div>
       </div>
 
-      <!-- Modal Compartir -->
-<div id="modalCompartir" class="modal hidden">
-  <div class="modal-content">
-    <h3>Compartir con...</h3>
-    <div class="row">
-      <span>Sonia.P</span>
-      <select>
-        <option>Lectura</option>
-        <option>Escritura</option>
-      </select>
-    </div>
-    <div class="row">
-      <span>añadir amigo</span>
-      <select>
-        <option>Lectura</option>
-        <option>Escritura</option>
-      </select>
-    </div>
-    <div class="actions">
-      <button class="cancel" onclick="cerrarModales()">Cancelar</button>
-      <button class="confirm" onclick="compartirExterno()">Compartir</button>
-    </div>
-    <button class="external-btn" onclick="abrirModalExterno()">Compartir externamente</button>
-  </div>
-</div>
-
-<!-- Modal Compartir Externamente -->
-<div id="modalExterno" class="modal hidden">
-  <div class="modal-content externo">
-    <div class="drag-bar"></div>
-    <div class="top-bar">
-      <h3>Compartir</h3>
-      <button class="close" onclick="cerrarModalExterno()">✖</button>
-    </div>
-    <p style="margin-top: 0; margin-bottom: 10px; font-size: 14px;">Selecciona con quién o cómo compartir</p>
-
-    <!-- Perfiles -->
-    <div class="avatars">
-      <div style="text-align: center;">
-        <img src="https://randomuser.me/api/portraits/women/1.jpg" />
-        <div style="font-size: 12px;">Sonia.P</div>
-      </div>
-      <div style="text-align: center;">
-        <img src="https://randomuser.me/api/portraits/men/2.jpg" />
-        <div style="font-size: 12px;">Kevin L.</div>
-      </div>
-      <div style="text-align: center;">
-        <img src="https://randomuser.me/api/portraits/women/3.jpg" />
-        <div style="font-size: 12px;">Juliana</div>
-      </div>
-      <div style="text-align: center;">
-        <img src="https://randomuser.me/api/portraits/women/4.jpg" />
-        <div style="font-size: 12px;">Ana G.</div>
+          <!-- Modal Compartir -->
+    <div id="modalCompartir" class="modal hidden">
+      <div class="modal-content">
+        <h3>Compartir con...</h3>
+        <div class="row">
+          <span>Sonia.P</span>
+          <select>
+            <option>Lectura</option>
+            <option>Escritura</option>
+          </select>
+        </div>
+        <div class="row">
+          <span>añadir amigo</span>
+          <select>
+            <option>Lectura</option>
+            <option>Escritura</option>
+          </select>
+        </div>
+        <div class="actions">
+          <button class="cancel" onclick="cerrarModales()">Cancelar</button>
+          <button class="confirm" onclick="compartirExterno()">Compartir</button>
+        </div>
+        <button class="external-btn" onclick="abrirModalExterno()">Compartir externamente</button>
       </div>
     </div>
 
-    <!-- Aplicaciones -->
-    <div class="apps">
-      <div style="text-align: center;">
-        <img src="https://cdn-icons-png.flaticon.com/512/888/888882.png" width="32" />
-        <div>OneDrive</div>
-      </div>
-      <div style="text-align: center;">
-        <img src="https://cdn-icons-png.flaticon.com/512/2702/2702602.png" width="32" />
-        <div>Drive</div>
-      </div>
-      <div style="text-align: center;">
-        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968885.png" width="32" />
-        <div>Notion</div>
+    <!-- Modal Compartir Externamente -->
+    <div id="modalExterno" class="modal hidden">
+      <div class="modal-content externo">
+        <div class="drag-bar"></div>
+        <div class="top-bar">
+          <h3>Compartir</h3>
+          <button class="close" onclick="cerrarModalesExterno()">✖</button>
+        </div>
+        <p style="margin-top: 0; margin-bottom: 10px; font-size: 14px;">Selecciona con quién o cómo compartir</p>
+
+        <!-- Perfiles -->
+        <div class="avatars">
+          <div style="text-align: center;">
+            <img src="https://randomuser.me/api/portraits/women/1.jpg" />
+            <div style="font-size: 12px;">Sonia.P</div>
+          </div>
+          <div style="text-align: center;">
+            <img src="https://randomuser.me/api/portraits/men/2.jpg" />
+            <div style="font-size: 12px;">Kevin L.</div>
+          </div>
+          <div style="text-align: center;">
+            <img src="https://randomuser.me/api/portraits/women/3.jpg" />
+            <div style="font-size: 12px;">Juliana</div>
+          </div>
+          <div style="text-align: center;">
+            <img src="https://randomuser.me/api/portraits/women/4.jpg" />
+            <div style="font-size: 12px;">Ana G.</div>
+          </div>
+        </div>
+
+        <!-- Aplicaciones -->
+        <div class="apps">
+          <div style="text-align: center;">
+            <img src="https://cdn-icons-png.flaticon.com/512/888/888882.png" width="32" />
+            <div>OneDrive</div>
+          </div>
+          <div style="text-align: center;">
+            <img src="https://cdn-icons-png.flaticon.com/512/2702/2702602.png" width="32" />
+            <div>Drive</div>
+          </div>
+          <div style="text-align: center;">
+            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968885.png" width="32" />
+            <div>Notion</div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <input type="text" placeholder="Copy link" />
-    <a href="#" class="edit" onclick="cerrarModalExterno()">Edit Actions...</a>
-  </div>
-</div>
 
+    <!-- Modal de Exportar -->
+    <div id="exportarModal" class="modal hidden">
+      <div class="modal-content">
+        <h3 style="color: #8000ff;">Exportar Tema 1 a ...</h3>
+        <div class="formatos">
+          <button class="formato selected">PDF</button>
+          <button class="formato">IMAGEN</button>
+          <button class="formato">AUDIO</button>
+        </div>
+        <div class="modal-buttons">
+          <button class="btn-nope" onclick="cerrarModalesExportar()">Cancelar</button>
+          <button class="btn-exportar" onclick="mostrarProgreso()">Exportar</button>
+        </div>
+      </div>
+    </div>
 
+    <!-- Modal de Progreso -->
+    <div id="progresoModal" class="modal hidden">
+      <div class="modal-content">
+        <h3 style="color: #8000ff;">Exportando...</h3>
+        <div class="barra-progreso">
+          <div class="progreso"></div>
+        </div>
+        <p><strong>Esto puede tomar varios minutos</strong></p>
+        <div style="text-align: right;">
+          <button class="btn-cancelar" onclick="cerrarModalesExportar()">Cancelar</button>
+        </div>
+      </div>
+    </div>
 
 
 
@@ -350,14 +377,16 @@
 
   function cerrarModales() {
     document.getElementById("modalCompartir").classList.add("hidden");
-    document.getElementById("modalCompartirExterno").classList.add("hidden");
+    document.getElementById("modalExterno").classList.add("hidden");
+    document.getElementById("exportarModal").classList.add("hidden");
+    document.getElementById("progresoModal").classList.add("hidden");
   }
 
   function abrirModalExterno() {
   document.getElementById('modalExterno').classList.remove('hidden');
 }
 
-function cerrarModalExterno() {
+function cerrarModalesExterno() {
   document.getElementById('modalExterno').classList.add('hidden');
 }
 
@@ -366,6 +395,28 @@ function cerrarModalExterno() {
     cerrarModales();
   }
 
+  function abrirExportarModal() {
+    document.getElementById("exportarModal").classList.remove("hidden");
+  }
+
+  function mostrarProgreso() {
+    document.getElementById("exportarModal").classList.add("hidden");
+    document.getElementById("progresoModal").classList.remove("hidden");
+  }
+
+  function cerrarModalesExportar() {
+    document.getElementById("exportarModal").classList.add("hidden");
+    document.getElementById("progresoModal").classList.add("hidden");
+  }
+
+  // Para marcar el formato seleccionado
+  const formatos = document.querySelectorAll(".formato");
+  formatos.forEach(btn => {
+    btn.addEventListener("click", () => {
+      formatos.forEach(b => b.classList.remove("selected"));
+      btn.classList.add("selected");
+    });
+  });
   </script>
   
 </body>
