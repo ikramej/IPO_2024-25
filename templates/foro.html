@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Foro en iPhone</title>
+    <link rel="stylesheet" href="/style/style.css">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <style>
+        /* Estilos del frame de iPhone (los que proporcionaste) */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        .iphone-15 {
+            position: relative;
+            width: 325px;
+            height: 762px;
+            background-color: #111;
+            border-radius: 54px;
+            padding: 10px;
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+        }
+        .screen {
+            width: 100%;
+            height: 100%;
+            background: white;
+            border-radius: 45px;
+            overflow: hidden;
+            position: relative;
+        }
+        .dynamic-island {
+            position: absolute;
+            width: 126px;
+            height: 34px;
+            background: #111;
+            border-radius: 20px;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+        .bottom-bar {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            height: 50px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+            border: 2px solid #ccc;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+        .bottom-bar iconify-icon {
+            font-size: 22px;
+            color: black;
+        }
+        .bottom-bar iconify-icon.active {
+            color: #7D00FF;
+        }
+        /* Estilos específicos para el contenido del foro */
+        .forum-container {
+            position: relative;
+            width: 100%;
+            height: calc(100% - 70px);
+            overflow-y: auto;
+            padding-top: 20px;
+            box-sizing: border-box;
+        }
+        
+        /* Estilos adaptados de tu HTML */
+        .forum-content {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background: white;
+            overflow-y: auto;
+        }
+        
+        .forum-questions {
+            width: 90%;
+            margin: 0 auto;
+            padding-top: 80px;
+        }
+        
+        .question-card {
+            width: 100%;
+            background: #F3F3F3;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+        
+        .user-name {
+            color: black;
+            font-size: 14px;
+            font-family: Inter, sans-serif;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .question-text {
+            color: black;
+            font-size: 14px;
+            font-family: Inter, sans-serif;
+            font-weight: 400;
+            margin: 15px 0;
+        }
+        
+        .answers-section {
+            margin-top: 20px;
+        }
+        
+        .answers-title {
+            color: black;
+            font-size: 14px;
+            font-family: Inter, sans-serif;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .answer {
+            position: relative;
+            margin-bottom: 15px;
+            padding-left: 40px;
+        }
+        
+        .answer-user {
+            color: black;
+            font-size: 16px;
+            font-family: Inter, sans-serif;
+            font-weight: 400;
+        }
+        
+        .answer-text {
+            color: black;
+            font-size: 14px;
+            font-family: Inter, sans-serif;
+            font-weight: 400;
+            margin-top: 5px;
+        }
+        
+        .reply-button {
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: #6200EA;
+            border-radius: 5px;
+            color: white;
+            font-size: 12px;
+            font-family: Inter, sans-serif;
+            font-weight: 400;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .no-answers {
+            color: #808080;
+            font-size: 12px;
+            font-family: Inter, sans-serif;
+            font-weight: 400;
+            margin-top: 15px;
+        }
+        
+        .divider {
+            height: 1px;
+            background: black;
+            margin: 10px 0;
+        }
+        
+        .user-avatar {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #ccc;
+        }
+        
+        .navigation-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: white;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+            z-index: 10;
+        }
+        
+        .nav-title {
+            color: #343434;
+            font-size: 20px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            margin-left: 20px;
+        }
+        
+        .back-button {
+            cursor: pointer;
+        }
+        
+        .add-question {
+            position: absolute;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+        
+        .add-button {
+            width: 50px;
+            height: 50px;
+            background: #7D00FF;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 30px;
+            margin: 0 auto 10px;
+            cursor: pointer;
+        }
+        
+        .add-text {
+            color: black;
+            font-size: 14px;
+            font-family: Inter, sans-serif;
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+    <div class="iphone-15">
+        <!-- Dynamic Island -->
+        <div class="dynamic-island" style="margin-top: 10px"></div>
+        <!-- Pantalla principal -->
+        <div class="screen">
+            <!-- Contenedor del foro -->
+            <div class="forum-container">
+                <!-- Barra de navegación -->
+                <div class="navigation-bar" style="
+                margin-top: 44px;
+                margin-bottom: 0px;
+            ">
+                    <div class="back-button">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.34329 7.99725C3.34329 7.71059 3.44716 7.42397 3.65445 7.20542L10.1809 0.328115C10.596-0.109372 11.2691-0.109372 11.6841 0.328115C12.0991 0.765425 12.0991 1.47459 11.6841 1.91212L5.90919 7.99725L11.6839 14.0824C12.0989 14.5199 12.0989 15.229 11.6839 15.6663C11.2689 16.104 10.5958 16.104 10.1807 15.6663L3.65425 8.78907C3.44692 8.57042 3.34329 8.2838 3.34329 7.99725Z" fill="#343434"/>
+                        </svg>
+                    </div>
+                    <div class="nav-title">FORO</div>
+                </div>
+                
+                <!-- Contenido del foro -->
+                <div class="forum-questions">
+                    <!-- Tarjeta de pregunta 1 -->
+                    <div class="question-card">
+                        <div class="user-name">Marta_Eve</div>
+                        <div class="user-avatar" style="
+                        margin-top: 94px;
+                        margin-right: 11px;
+                    "></div>
+                        <div class="question-text">¿Cuál es la diferencia entre propiedad y posesión?</div>
+                        <div class="divider"></div>
+                        
+                        <div class="answers-section">
+                            <div class="answers-title">RESPONDER</div>
+                            
+                            <!-- Respuesta 1 -->
+                            <div class="answer">
+                                <div class="user-avatar" style="left: 0; top: 0;"></div>
+                                <div class="answer-user">@Jonas_20</div>
+                                <button class="reply-button">Responder</button>
+                                <div class="answer-text">La propiedad es el derecho a disponer de un bien, mientras que...</div>
+                            </div>
+                            
+                            <!-- Respuesta 2 -->
+                            <div class="answer">
+                                <div class="user-avatar" style="left: 0; top: 0;"></div>
+                                <div class="answer-user">@Anag_</div>
+                                <button class="reply-button">Responder</button>
+                                <div class="answer-text">Depende del contexto....</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tarjeta de pregunta 2 -->
+                    <div class="question-card">
+                        <div class="user-name">Sonia_P</div>
+                        <div class="user-avatar" style="
+                        margin-top: 412px;
+                        margin-right: 11px;
+                    "></div>
+                        <div class="question-text">¿Saben si existe algún manual gratuito sobre derecho civil?</div>
+                        <div class="no-answers">No hay respuestas de momento</div>
+                    </div>
+                </div>
+                
+                <!-- Botón para añadir pregunta -->
+                <div class="add-question" style="top: 560px;">
+                    <div class="add-button">+</div>
+                    <div class="add-text">¡Pregunta sin miedo!</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Barra inferior -->
+        <div class="bottom-bar">
+            <iconify-icon icon="material-symbols:home" width="24" height="24"></iconify-icon>
+            <iconify-icon icon="material-symbols:search" width="24" height="24"></iconify-icon>
+            <iconify-icon icon="material-symbols:forum" width="24" height="24" class="active"></iconify-icon>
+            <iconify-icon icon="material-symbols:person" width="24" height="24"></iconify-icon>
+        </div>
+    </div>
+</body>
+</html>
