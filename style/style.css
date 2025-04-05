@@ -282,7 +282,7 @@
     }
 
     .plus-btn span {
-      font-size: 36px;
+      font-size: 80px;
       color: white;
       line-height: 1;
     }
@@ -454,11 +454,6 @@
 
     .dropdown-menu .selected {
       font-weight: bold;
-    }
-    
-    .menu-opciones a {
-      text-decoration: none;
-      color: inherit; /* Makes the link inherit the text color of the parent */
     }
     
     
