@@ -1,12 +1,66 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inicio</title>
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
   <link rel="stylesheet" href="../style/style.css">
+  <style>
+ .plus-btn {
+  position: relative; /* clave para posicionar el menú respecto a este */
+}
+
+.plus-menu {
+  position: absolute;
+  bottom: 100%; /* justo arriba del botón */
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  flex-direction: row;
+  gap: 10px;
+  padding-bottom: 10px; /* separarlo un poco del botón */
+  z-index: 1000;
+}
+
+.plus-option {
+  background-color: #8000ff;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 14px;
+  font-family: sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.plus-option:hover {
+  background-color: #6200ea;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  position: relative;
+}
+
+  </style>
+
 </head>
+
 <body>
   <div class="iphone-15">
     <div class="screen">
@@ -21,7 +75,7 @@
           <div id="viewDropdown" class="dropdown-menu">
             <div class="selected">Carpetas</div>
             <div>Listas</div>
-        </div>
+          </div>
 
         </div>
 
@@ -34,7 +88,7 @@
           <div class="selected">Favoritos</div>
         </div>
       </div>
-      
+
       <!-- Sección Estadística -->
       <div class="section">
         <div class="section-name star">Estadística</div>
@@ -54,27 +108,78 @@
       </div>
 
       <div class="floating-buttons">
-        <a href="../templates/pantallaMiCirculo.html"><div class="circle-btn">
-          <img src="../images/image 6.png" alt="Custom Circle Icon" />
-        </div></a>
-        
-        <a href="">
+        <a href="../templates/pantallaMiCirculo.html">
+          <div class="circle-btn">
+            <img src="../images/image 6.png" alt="Custom Circle Icon" />
+          </div>
+        </a>
+
         <div class="circle-btn plus-btn">
-          
-        <iconify-icon  icon="humbleicons:plus" style="font-size: 33px; color: white;"></iconify-icon>
+          <iconify-icon icon="humbleicons:plus" style="font-size: 33px; color: white;"></iconify-icon>
+          <div id="plus-menu" class="plus-menu">
+            <a href="/templates/crearApunte.html" style="text-decoration: none;"><div class="plus-option">Crear<br>Apunte</div></a>
+            <div class="plus-option" style="margin-right: 20px;">Subir<br>Apunte</div>
+          </div>
         </div>
-      
+       
       </div>
-    </a>
+
 
       <div class="bottom-bar">
         <a href="../templates/main.html"><iconify-icon icon="mingcute:world-2-line"></iconify-icon></a>
         <iconify-icon icon="tabler:pencil" class="active"></iconify-icon></a>
         <a href="../templates/notificaciones.html"><iconify-icon icon="bx:bell"></iconify-icon></a>
         <a href="../templates/pantallaPerfil.html"><iconify-icon icon="mingcute:user-2-line"></iconify-icon>
-      </a>
+        </a>
+      </div>
     </div>
+
+<!-- Modal de Subir Apunte -->
+<div id="uploadModal" class="modal-overlay" style="display: none;">
+  <div class="modal-content">
+    <!-- TU CONTENIDO PEGADO AQUÍ -->
+    <div data-layer="div.modal" style="width: 315px; height: 356.94px; position: relative; background: white; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.10); border-radius: 20px">
+      <div style="left: 20px; top: 34.94px; position: absolute; color: #7D00FF; font-size: 18px; font-family: Inter; font-weight: 700;">Selecciona un archivo</div>
+
+      <div style="width: 320px; height: 31px; left: 20px; top: 305.94px; position: absolute;">
+        <div id="cancelUpload" style="width: 84.33px; height: 31px; position: absolute; background: #F0F0F0; border-radius: 8px; left: 0; top: 0; cursor: pointer;">
+          <div style="left: 14px; top: 8px; position: absolute; color: #333; font-size: 13.33px; font-family: Inter; font-weight: 700;">Cancelar</div>
+        </div>
+        <a href="/templates/apuntes.html">
+          <div id="submitUpload" style="width: 62.08px; height: 31px; position: absolute; background: #7D00FF; border-radius: 8px; left: 200.92px; top: 0; cursor: pointer;">
+            <div style="left: 14px; top: 8px; position: absolute; color: white; font-size: 13.33px; font-family: Inter; font-weight: 700;">Subir</div>
+          </div>
+        </a>
+        
+      </div>
+
+      <div style="width: 302px; height: 233px; left: 8px; top: 67.47px; position: absolute; overflow-y: auto; border-radius: 10px; outline: 1px #E5E5FF solid;">
+        <!-- lista de archivos (recortada para ejemplo) -->
+        <div style="width: 280px; height: 35px; margin: 10px auto; background: #ECECFF; border-radius: 8px; display: flex; align-items: center; padding-left: 8px;">
+          <span style="font-size: 14px;">📄</span>
+          <span style="margin-left: 10px; font-size: 14px;">Resumen_Tema1.pdf</span>
+        </div>
+        <div data-layer="div.file-item" style="width: 280px; height: 35px; left: 11.50px; top: 53.53px; position: absolute; background: #ECECFF; border-radius: 8px">
+          <div data-layer="📄" style="left: 8px; top: 8px; position: absolute; color: black; font-size: 14px; font-family: Inter; font-weight: 400; word-wrap: break-word">📄</div>
+          <div data-layer="Ejercicios_Álgebra.docx" style="width: 165.32px; left: 39.21px; top: 9.50px; position: absolute; color: black; font-size: 14px; font-family: Inter; font-weight: 400; word-wrap: break-word">Ejercicios_Álgebra.docx</div>
+        </div>
+        <div data-layer="div.file-item" style="width: 280px; height: 35px; left: 11.50px; top: 96.53px; position: absolute; background: #ECECFF; border-radius: 8px">
+          <div data-layer="📄" style="left: 8px; top: 8px; position: absolute; color: black; font-size: 14px; font-family: Inter; font-weight: 400; word-wrap: break-word">📄</div>
+          <div data-layer="ApuntesEstadistica.txt" style="width: 156.90px; left: 39.21px; top: 9.50px; position: absolute; color: black; font-size: 14px; font-family: Inter; font-weight: 400; word-wrap: break-word">ApuntesEstadistica.txt</div>
+        </div>
+        <div data-layer="div.file-item" style="width: 280px; height: 35px; left: 11.50px; top: 139.53px; position: absolute; background: #ECECFF; border-radius: 8px">
+          <div data-layer="📄" style="left: 8px; top: 8px; position: absolute; color: black; font-size: 14px; font-family: Inter; font-weight: 400; word-wrap: break-word">📄</div>
+          <div data-layer="FotoPerfil.jpeg" style="width: 158px; left: 39px; top: 10px; position: absolute; color: black; font-size: 14px; font-family: Inter; font-weight: 400; word-wrap: break-word">FotoPerfil.jpeg</div>
+        </div>
+        <div data-layer="div.file-item" style="width: 280px; height: 35px; left: 11.50px; top: 182.53px; position: absolute; background: #ECECFF; border-radius: 8px">
+          <div data-layer="📄" style="left: 8px; top: 8px; position: absolute; color: black; font-size: 14px; font-family: Inter; font-weight: 400; word-wrap: break-word">📄</div>
+          <div data-layer="DiagramaVectores.png" style="width: 157.95px; left: 39.21px; top: 9.50px; position: absolute; color: black; font-size: 14px; font-family: Inter; font-weight: 400; word-wrap: break-word">DiagramaVectores.png</div>
+        </div>
+      </div>
     </div>
+  </div>
+</div>
+
   </div>
   <script>
     // Asignar valores aleatorios a cada card al cargar
@@ -83,12 +188,12 @@
       card.dataset.fecha = Math.floor(Math.random() * 100);     // Número aleatorio (0–99)
       card.dataset.visitado = Math.floor(Math.random() * 100);  // Otro valor aleatorio
     });
-  
+
     // Mostrar/ocultar el menú
     function toggleDropdown() {
       document.getElementById("dropdown").classList.toggle("active");
     }
-  
+
     // Cierra el dropdown si haces clic fuera
     window.addEventListener('click', function (e) {
       const dropdown = document.getElementById('dropdown');
@@ -96,21 +201,21 @@
         dropdown.classList.remove('active');
       }
     });
-  
+
     // Lógica del filtro
     const dropdownItems = document.querySelectorAll("#dropdown div");
-  
+
     dropdownItems.forEach(item => {
       item.addEventListener("click", () => {
         // Visual
         dropdownItems.forEach(i => i.classList.remove("selected"));
         item.classList.add("selected");
-  
+
         document.getElementById("dropdown").classList.remove("active");
         const filter = item.textContent.trim();
-  
+
         let sortedCards = Array.from(cards);
-  
+
         if (filter === "Favoritos") {
           // Mostrar solo los que tienen estrella
           cards.forEach(card => {
@@ -118,7 +223,7 @@
           });
           return;
         }
-  
+
         // Ordenar
         if (filter === "Nombre") {
           sortedCards.sort((a, b) => a.textContent.localeCompare(b.textContent));
@@ -129,11 +234,11 @@
         } else if (filter === "Visitado") {
           sortedCards.sort((a, b) => b.dataset.visitado - a.dataset.visitado);
         }
-  
+
         // Reinsertar ordenado
         const rows = document.querySelectorAll(".cards-row");
         rows.forEach(row => row.innerHTML = "");
-  
+
         let index = 0;
         for (let row of rows) {
           for (let i = 0; i < 2 && index < sortedCards.length; i++, index++) {
@@ -190,7 +295,57 @@
       });
     });
 
+
+    // Mostrar/ocultar el menú flotante del botón "+"
+    const plusBtn = document.querySelector('.plus-btn');
+    const plusMenu = document.getElementById('plus-menu');
+
+    plusBtn.addEventListener('click', function (e) {
+      e.stopPropagation(); // Evita que se dispare el cierre inmediatamente
+      plusMenu.style.display = plusMenu.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+    // Cierra el menú si haces clic fuera
+    document.addEventListener('click', function () {
+      plusMenu.style.display = 'none';
+    });
+
+    function togglePlusMenu() {
+  const menu = document.getElementById('plus-menu');
+  const isVisible = menu.style.display === 'flex';
+  menu.style.display = isVisible ? 'none' : 'flex';
+}
+
+// Cerrar si se hace clic fuera
+document.addEventListener('click', function (e) {
+  const menu = document.getElementById('plus-menu');
+  const plusBtn = document.querySelector('.plus-btn');
+  if (!plusBtn.contains(e.target)) {
+    menu.style.display = 'none';
+  }
+});
+
+
+// Mostrar modal al hacer clic en "Subir Apunte"
+document.querySelectorAll('.plus-option')[1].addEventListener('click', function () {
+  document.getElementById('uploadModal').style.display = 'flex';
+  document.getElementById('plus-menu').style.display = 'none'; // ocultar el menú
+});
+
+// Ocultar al hacer clic en "Cancelar"
+document.getElementById('cancelUpload').addEventListener('click', function () {
+  document.getElementById('uploadModal').style.display = 'none';
+});
+
+// También cerrar si se hace clic fuera del contenido del modal
+document.getElementById('uploadModal').addEventListener('click', function (e) {
+  if (e.target === this) {
+    this.style.display = 'none';
+  }
+});
+
   </script>
-  
+
 </body>
+
 </html>
