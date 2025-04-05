@@ -99,30 +99,49 @@
 
   <script>
     function cerrarModal() {
-      if (window.parent && window.parent.ocultarModal) {
-        window.parent.ocultarModal();
-      }
-    }
+  // Eliminar mensajes de error si existen
+  const errorMessages = document.querySelectorAll('.mensaje-error');
+  errorMessages.forEach(msg => msg.remove());
 
+  // Enviar mensaje al padre para cerrar el modal
+  window.parent.postMessage("cerrar-modal", "*");
+}
+
+  
     function eliminarCuenta() {
+      // Elimina mensajes anteriores
+      const errorMessages = document.querySelectorAll('.mensaje-error');
+      errorMessages.forEach(msg => msg.remove());
+  
       const password = document.querySelector('input[type="password"]').value;
+  
       if (!password) {
-        const errorElement = document.createElement('div');
-        errorElement.textContent = 'Por favor ingresa tu contraseña';
-        errorElement.style.color = '#ff4444';
-        errorElement.style.paddingBlockEnd = '5px';
-        errorElement.style.fontSize = '17px';
-        document.querySelector('.modal').appendChild(errorElement);
+        mostrarError('Por favor ingresa tu contraseña');
         return;
       }
-
-      if (window.top) {
-        window.top.location.href = "../iniciarSesión.html";
-      } else {
-        window.location.href = "../iniciarSesión.html";
+  
+      if (password !== 'pass') {
+        mostrarError('Contraseña incorrecta');
+        return;
       }
+  
+      window.top.location.href = '/templates/iniciarSesión.html';
+
+
+
+    }
+  
+    function mostrarError(mensaje) {
+      const errorElement = document.createElement('div');
+      errorElement.textContent = mensaje;
+      errorElement.style.color = '#ff4444';
+      errorElement.style.paddingBlockEnd = '5px';
+      errorElement.style.fontSize = '17px';
+      errorElement.classList.add('mensaje-error');
+      document.querySelector('.modal').appendChild(errorElement);
     }
   </script>
+  
 </body>
 
 </html>
