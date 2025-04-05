@@ -109,10 +109,11 @@
 
       <!-- Modal al hacer clic en un apunte -->
       <div id="cardOptions" class="dropdown-menu" style="display: none; position: absolute;">
+        <div onclick="window.location.href='../templates/escribir-compartir-apunte.html'">📄 Abrir</div>
         <div onclick="editarApunte()">✏️ Editar</div>
         <div onclick="mostrarModalEliminar('Tema 1: Action Potentials')">🗑️ Eliminar</div>
         <div onclick="mostrarModalCompartir()">📤 Compartir a...</div>
-        <div onclick="exportarApunte()">📁 Exportar a...</div>
+        <div onclick="abrirExportarModal()">📁 Exportar a...</div>
       </div>
 
       <!-- Modal de Confirmación -->
