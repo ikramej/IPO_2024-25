@@ -212,5 +212,12 @@ iframe {
     function ocultarModal() {
             document.getElementById('modal-overlay').style.display = 'none';
         }
+  // Escuchar mensajes del iframe
+window.addEventListener("message", function (event) {
+  if (event.data === "cerrar-modal") {
+    ocultarModal();
+  }
+});
+
 </script>
 </html>
