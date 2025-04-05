@@ -205,7 +205,35 @@
   </div>
 </div>
 
+ <!-- Modal de Exportar -->
+ <div id="exportarModal" class="modal hidden">
+  <div class="modal-content">
+    <h3 style="color: #8000ff;">Exportar Tema 1 a ...</h3>
+    <div class="formatos">
+      <button class="formato selected">PDF</button>
+      <button class="formato">IMAGEN</button>
+      <button class="formato">AUDIO</button>
+    </div>
+    <div class="modal-buttons">
+      <button class="btn-nope" onclick="cerrarModalesExportar()">Cancelar</button>
+      <button class="btn-exportar" onclick="mostrarProgreso()">Exportar</button>
+    </div>
+  </div>
+</div>
 
+<!-- Modal de Progreso -->
+<div id="progresoModal" class="modal hidden">
+  <div class="modal-content">
+    <h3 style="color: #8000ff;">Exportando...</h3>
+    <div class="barra-progreso">
+      <div class="progreso"></div>
+    </div>
+    <p><strong>Esto puede tomar varios minutos</strong></p>
+    <div style="text-align: right;">
+      <button class="btn-cancelar" onclick="cerrarModalesExportar()">Cancelar</button>
+    </div>
+  </div>
+</div>
 
 
 
@@ -284,6 +312,84 @@
 
   </div>
   <script>
+
+
+function mostrarCardOptions(e) {
+      e.stopPropagation();
+      const menu = document.getElementById("cardOptions");
+      const card = e.currentTarget;
+
+      // Obtener posición relativa al contenedor padre (.screen)
+      const top = card.offsetTop + card.offsetHeight;
+      const left = card.offsetLeft;
+
+      menu.style.top = `${top}px`;
+      menu.style.left = `${left}px`;
+      menu.style.display = "block";
+    }
+
+
+    // Cerrar el menú al hacer clic fuera
+    window.addEventListener("click", () => {
+      const menu = document.getElementById("cardOptions");
+      menu.style.display = "none";
+    });
+
+    // Acciones de las opciones
+    function editarApunte() {
+      window.location.href = "../templates/editarApunte.html";
+    }
+
+    function borrarApunte() {
+      alert("¿Borrar este apunte?");
+    }
+
+    function compartirApunte() {
+      alert("Compartir apunte...");
+    }
+
+    function exportarApunte() {
+      alert("Exportar apunte...");
+    }
+
+    function mostrarModalEliminar(nombre) {
+      document.getElementById("nombreApunte").textContent = nombre;
+      document.getElementById("deleteModal").classList.remove("hidden");
+      document.getElementById("cardOptions").style.display = "none";
+    }
+
+    function cerrarModalEliminar() {
+      document.getElementById("deleteModal").classList.add("hidden");
+    }
+
+    function mostrarModalCompartir() {
+    document.getElementById("modalCompartir").classList.remove("hidden");
+  }
+
+  function mostrarModalExterno() {
+    document.getElementById("modalCompartir").classList.add("hidden");
+    document.getElementById("modalCompartirExterno").classList.remove("hidden");
+  }
+
+  function cerrarModales() {
+    document.getElementById("modalCompartir").classList.add("hidden");
+    document.getElementById("modalCompartirExterno").classList.add("hidden");
+  }
+
+  function abrirModalExterno() {
+  document.getElementById('modalExterno').classList.remove('hidden');
+}
+
+function cerrarModalExterno() {
+  document.getElementById('modalExterno').classList.add('hidden');
+}
+
+  function compartirExterno() {
+    // Aquí iría lógica real
+    cerrarModales();
+  }
+
+
     // Asignar valores aleatorios a cada card al cargar
     const cards = document.querySelectorAll(".card");
     cards.forEach(card => {
@@ -445,6 +551,29 @@ document.getElementById('uploadModal').addEventListener('click', function (e) {
     this.style.display = 'none';
   }
 });
+
+function abrirExportarModal() {
+    document.getElementById("exportarModal").classList.remove("hidden");
+  }
+
+  function mostrarProgreso() {
+    document.getElementById("exportarModal").classList.add("hidden");
+    document.getElementById("progresoModal").classList.remove("hidden");
+  }
+
+  function cerrarModalesExportar() {
+    document.getElementById("exportarModal").classList.add("hidden");
+    document.getElementById("progresoModal").classList.add("hidden");
+  }
+
+  // Para marcar el formato seleccionado
+  const formatos = document.querySelectorAll(".formato");
+  formatos.forEach(btn => {
+    btn.addEventListener("click", () => {
+      formatos.forEach(b => b.classList.remove("selected"));
+      btn.classList.add("selected");
+    });
+  });
 
   </script>
 
