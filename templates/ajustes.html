@@ -4,6 +4,68 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style/style.css">
+  <style>
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:transparent;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.modal-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+iframe {
+    border: none;
+    width: 100%;
+    max-width: 300px; 
+    height: 900px; 
+    max-height: 180vh; 
+    overflow: hidden; 
+}
+
+.delete-button {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.delete-button button {
+    width: 100%;
+    padding: 6px;
+    background-color: #e53935;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(255, 68, 68, 0.2);
+}
+
+
+.delete-button button:active {
+    transform: translateY(0.8);
+    box-shadow: 0 2px 3px rgba(255, 68, 68, 0.2);
+}
+
+.section-title{
+    color:#6200EA;
+}
+
+  </style>
 </head>
 <body>
   <div class="iphone-15">
@@ -12,11 +74,13 @@
       
       <div class="settings-container">
         <div class="navigation-bar">
+          <a href="pantallaPerfil.html">
           <svg class="back-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g transform="scale(-1, 1) translate(-16, 0)">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M3.34329 7.99728C3.34329 7.71062 3.44716 7.424 3.65445 7.20546L10.1809 0.328146C10.596 -0.109341 11.2691 -0.109341 11.6841 0.328146C12.0991 0.765455 12.0991 1.47462 11.6841 1.91215L5.90919 7.99728L11.6839 14.0824C12.0989 14.5199 12.0989 15.229 11.6839 15.6663C11.2689 16.104 10.5958 16.104 10.1807 15.6663L3.65425 8.7891C3.44692 8.57045 3.34329 8.28383 3.34329 7.99728Z" fill="#343434"/>
             </g>
           </svg>
+        </a>
           <div class="page-title">Configuración</div>
         </div>        
         
@@ -110,18 +174,43 @@
               <img class="dropdown-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABdSURBVHgBvYyxCsAgDERv6+on9FMc+oVdC6107dy9Q3f9I71ABAdBFz14yXE5AoyU7extMgI5GsWLeDFGzU2WStHp3eRAzEv+IpT9kacs1r6suh0a2kkkJzplMVUJw6AO9oX8AdMAAAAASUVORK5CYII=">
             </div>
           </div>
-          
           <div class="delete-button">
-            Eliminar Cuenta
-          </div>
+            <button onclick="mostrarModal()">
+                <span>Eliminar cuenta</span>
+            </button>
+        </div>
         </div>
       </div>
     </div>
   </div>
+<!-- Contenedor del modal -->
+<div id="modal-overlay" class="modal-overlay">
+    <div class="modal-container">
+        <iframe 
+        id="modal-iframe" 
+        src="./modales/modalEliminarCuenta.html"
+        scrolling="no"
+        style="
+            width: 300px; 
+            height: 220px; /* Altura fija suficiente para tu contenido */
+            border: none;
+            overflow: hidden;">
+    </iframe>
+    </div>
+</div>
+
 </body>
 <script>
   document.querySelector(".back-icon").addEventListener("click", function() {
     window.history.back();
   });
+
+    function mostrarModal() {
+            document.getElementById('modal-overlay').style.display = 'flex';
+        }
+        
+    function ocultarModal() {
+            document.getElementById('modal-overlay').style.display = 'none';
+        }
 </script>
 </html>
