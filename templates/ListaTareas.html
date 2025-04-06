@@ -83,6 +83,7 @@
       padding: 12px;
       cursor: pointer;
     }
+
   </style>
 </head>
 <body>
@@ -108,23 +109,23 @@
         <div class="sticky-notes">
           <div class="note">
             Investigar<br>BBDD
-            <div class="circle"></div>
+            <div class="circle" onclick="toggleCompleted(this.parentNode)"></div>
           </div>
           <div class="note">
             Revisión de<br>Examen<br>07/12
-            <div class="circle"></div>
+            <div class="circle" onclick="toggleCompleted(this.parentNode)"></div>
           </div>
           <div class="note completed">
             Estudiar<br>Tema 8 IPO
-            <div class="circle"></div>
+            <div class="circle" onclick="toggleCompleted(this.parentNode)"></div>
           </div>
           <div class="note">
             Tutoría<br>10 AM
-            <div class="circle"></div>
+            <div class="circle" onclick="toggleCompleted(this.parentNode)"></div>
           </div>
           <div class="note">
             Test Tema<br>13 ED
-            <div class="circle"></div>
+            <div class="circle" onclick="toggleCompleted(this.parentNode)"></div>
           </div>
         </div>
 
@@ -136,4 +137,9 @@
     </div>
   </div>
 </body>
+<script>
+  function toggleCompleted(noteElement) {
+    noteElement.classList.toggle("completed");
+  } 
+</script>
 </html>
