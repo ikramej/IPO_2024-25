@@ -5,7 +5,7 @@ Este es un prototipo funcional de la aplicación del equipo de UXceptional. Para
 
 ## Cómo iniciar el prototipo
 
-1. Abre el archivo `iniciarSesion.html` en tu navegador.
+1. Abre el archivo `templates/iniciarSesion.html` en tu navegador.
 2. Ingresa las siguientes credenciales para acceder:
 
    - **Usuario:** `user`  
