@@ -458,6 +458,7 @@
     
     
     .menu-opciones {
+      list-style: none;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -470,6 +471,13 @@
       margin: 0;
       border-left: 2px solid lightgray;
     }
+    .menu-opciones ul a {
+      color: inherit;           /* Inherit text color from parent */
+      text-decoration: none;    /* Remove underline */
+             /* Make it look like normal text */
+    
+    }
+    
     
     .menu-opciones li {
       font-size: 17px;
