@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TEMA 1: ACTION POTENTIALS</title>
-  <link rel="stylesheet" href="/style/style.css"> <!-- Aquí tu archivo CSS -->
+  <link rel="stylesheet" href="../style/style.css"> <!-- Aquí tu archivo CSS -->
 </head>
 
 <body>
@@ -32,7 +32,7 @@
         <!-- Barra de búsqueda y botón compartir -->
         <div id="btn-compartir"  class="section" style="display: flex; align-items: center; justify-content: space-between;">
           <input type="text" placeholder="Búsqueda 🔍" class="search-bar" style="margin-top:0;">
-          <button style="background-color: #7D00FF; color: white; border:none; padding:8px 12px; border-radius:8px; cursor:pointer; font-size:13px;">
+          <button style="background-color: #7D00FF; color: white; border:none; padding:8px 12px; border-radius:8px; cursor:pointer; font-size:13px;" onclick="mostrarModalCompartir()">
             Compartir
           </button>
         </div>
@@ -89,10 +89,87 @@
           <!-- 🔼 FIN DEL CONTENIDO DEL MODAL 🔼 -->
         </div>
 
+
+              <!-- Modal Compartir -->
+<div id="modalCompartir" class="modal hidden">
+  <div class="modal-content">
+    <h3>Compartir con...</h3>
+    <div class="row">
+      <span>Sonia.P</span>
+      <select>
+        <option>Lectura</option>
+        <option>Escritura</option>
+      </select>
+    </div>
+    <div class="row">
+      <span>añadir amigo</span>
+      <select>
+        <option>Lectura</option>
+        <option>Escritura</option>
+      </select>
+    </div>
+    <div class="actions">
+      <button class="cancel" onclick="cerrarModales()">Cancelar</button>
+      <button class="confirm" onclick="compartirExterno()">Compartir</button>
+    </div>
+    <button class="external-btn" onclick="abrirModalExterno()">Compartir externamente</button>
+  </div>
+</div>
+
+<!-- Modal Compartir Externamente -->
+<div id="modalExterno" class="modal hidden">
+  <div class="modal-content externo">
+    <div class="drag-bar"></div>
+    <div class="top-bar">
+      <h3>Compartir</h3>
+      <button class="close" onclick="cerrarModalExterno()">✖</button>
+    </div>
+    <p style="margin-top: 0; margin-bottom: 10px; font-size: 14px;">Selecciona con quién o cómo compartir</p>
+
+    <!-- Perfiles -->
+    <div class="avatars">
+      <div style="text-align: center;">
+        <img src="https://randomuser.me/api/portraits/women/1.jpg" />
+        <div style="font-size: 12px;">Sonia.P</div>
+      </div>
+      <div style="text-align: center;">
+        <img src="https://randomuser.me/api/portraits/men/2.jpg" />
+        <div style="font-size: 12px;">Kevin L.</div>
+      </div>
+      <div style="text-align: center;">
+        <img src="https://randomuser.me/api/portraits/women/3.jpg" />
+        <div style="font-size: 12px;">Juliana</div>
+      </div>
+      <div style="text-align: center;">
+        <img src="https://randomuser.me/api/portraits/women/4.jpg" />
+        <div style="font-size: 12px;">Ana G.</div>
+      </div>
+    </div>
+
+    <!-- Aplicaciones -->
+    <div class="apps">
+      <div style="text-align: center;">
+        <img src="https://cdn-icons-png.flaticon.com/512/888/888882.png" width="32" />
+        <div>OneDrive</div>
+      </div>
+      <div style="text-align: center;">
+        <img src="https://cdn-icons-png.flaticon.com/512/2702/2702602.png" width="32" />
+        <div>Drive</div>
+      </div>
+      <div style="text-align: center;">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968885.png" width="32" />
+        <div>Notion</div>
+      </div>
+    </div>
+
+    <input type="text" placeholder="Copy link" />
+    <a href="#" class="edit" onclick="cerrarModalExterno()">Edit Actions...</a>
+  </div>
+</div>
  
         <!-- Imagen principal del apunte -->
         <div class="section" style="display:flex; justify-content:center; width: 100%; height: 70%; margin: 0px;">
-          <img src="/images/apuntes.png" alt="Apunte Action Potentials" style="width:90%; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+          <img src="../images/apuntes.png" alt="Apunte Action Potentials" style="width:90%; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
         </div>
 
       </div>
@@ -105,15 +182,34 @@
       window.history.back();
     });
   
-      // Mostrar modal
-  document.getElementById("btn-compartir").addEventListener("click", function () {
-    document.getElementById("modal-compartir").style.display = "block";
-  });
+ 
+  
+  function mostrarModalCompartir() {
+    document.getElementById("modalCompartir").classList.remove("hidden");
+  }
 
-  // Ocultar modal
-  document.getElementById("btn-cancelar").addEventListener("click", function () {
-    document.getElementById("modal-compartir").style.display = "none";
-  });
+  function mostrarModalExterno() {
+    document.getElementById("modalCompartir").classList.add("hidden");
+    document.getElementById("modalCompartirExterno").classList.remove("hidden");
+  }
+
+  function cerrarModales() {
+    document.getElementById("modalCompartir").classList.add("hidden");
+    document.getElementById("modalCompartirExterno").classList.add("hidden");
+  }
+
+  function abrirModalExterno() {
+  document.getElementById('modalExterno').classList.remove('hidden');
+}
+
+function cerrarModalExterno() {
+  document.getElementById('modalExterno').classList.add('hidden');
+}
+
+function compartirExterno() {
+    // Aquí iría lógica real
+    cerrarModales();
+  }
   </script>
   
 </html>

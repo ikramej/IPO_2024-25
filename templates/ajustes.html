@@ -74,7 +74,7 @@ iframe {
       
       <div class="settings-container">
         <div class="navigation-bar">
-          <a href="pantallaPerfil.html">
+          <a href="../templates/pantallaPerfil.html">
           <svg class="back-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g transform="scale(-1, 1) translate(-16, 0)">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M3.34329 7.99728C3.34329 7.71062 3.44716 7.424 3.65445 7.20546L10.1809 0.328146C10.596 -0.109341 11.2691 -0.109341 11.6841 0.328146C12.0991 0.765455 12.0991 1.47462 11.6841 1.91215L5.90919 7.99728L11.6839 14.0824C12.0989 14.5199 12.0989 15.229 11.6839 15.6663C11.2689 16.104 10.5958 16.104 10.1807 15.6663L3.65425 8.7891C3.44692 8.57045 3.34329 8.28383 3.34329 7.99728Z" fill="#343434"/>
@@ -188,7 +188,7 @@ iframe {
     <div class="modal-container">
         <iframe 
         id="modal-iframe" 
-        src="./modales/modalEliminarCuenta.html"
+        src="../modales/modalEliminarCuenta.html"
         scrolling="no"
         style="
             width: 300px; 
@@ -224,7 +224,7 @@ window.addEventListener('message', function (event) {
       iframe.src = './modales/modalEliminarCuenta.html';
       break;
     case 'eliminar-cuenta-definitivo':
-      window.top.location.href = '/templates/registrarse.html';
+      window.top.location.href = '../templates/registrarse.html';
       break;
     case 'cerrar-modal':
       ocultarModal();
